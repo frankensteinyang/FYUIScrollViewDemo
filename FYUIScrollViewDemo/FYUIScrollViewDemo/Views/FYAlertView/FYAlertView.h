@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, FYAlertViewStyle) {
+    TAlertViewStyleNeutral = 0
+};
+
 @interface FYAlertView : UIView
+
+@property (strong, nonatomic) NSString *message;
+@property (assign, nonatomic) FYAlertViewStyle style;
+
+-(id)init;
+
+-(void)show;
+-(void)hide;
 
 @end
