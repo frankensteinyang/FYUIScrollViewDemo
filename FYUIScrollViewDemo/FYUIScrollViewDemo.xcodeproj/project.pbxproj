@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		A1E8953DB53B634AC930C871 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B470CE6385F2A6F1C17709 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EF0BED3E1BF4933E00DAF12C /* FYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDefine.h; sourceTree = "<group>"; };
 		EFF012201BF33D5100B0F922 /* FYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAppDelegate.h; sourceTree = "<group>"; };
 		EFF012211BF33D5100B0F922 /* FYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAppDelegate.m; sourceTree = "<group>"; };
 		EFF012321BF3560100B0F922 /* FYUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUIViewController.h; sourceTree = "<group>"; };
@@ -104,6 +105,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EF0BED3B1BF4926800DAF12C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EF0BED3E1BF4933E00DAF12C /* FYDefine.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		EFF012311BF3560100B0F922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +174,7 @@
 		EFF5C4ED1BF32BE600B6A52D /* FYUIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EF0BED3B1BF4926800DAF12C /* Utilities */,
 				EFF012351BF3566500B0F922 /* Views */,
 				EFF012311BF3560100B0F922 /* Controllers */,
 				EFF012201BF33D5100B0F922 /* FYAppDelegate.h */,

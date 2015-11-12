@@ -16,24 +16,34 @@
 
 - (void)viewDidLoad {
     
-    UIView *contentView = [[UIView alloc] init];
-    [self.view addSubview:contentView];
-    @weakify(self);
-    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
-        make.center.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(160, 40));
-    }];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]
+                                      initWithEffect:
+                                      [UIBlurEffect effectWithStyle:
+                                       UIBlurEffectStyleExtraLight]];
+    effectView.frame = self.view.bounds;
+    effectView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:effectView];
     
     FYUIButton *showBannerBtn = [[FYUIButton alloc]
-                                 initWithFrame:CGRectMake(0, 0, 160, 40)
+                                 initWithFrame:CGRectZero
                                  style:FYUIButtonStyleTranslucent];
     showBannerBtn.text = @"Banner";
     showBannerBtn.font = [UIFont systemFontOfSize:14.0];
     showBannerBtn.backgroundColor = [UIColor whiteColor];
+//    showBannerBtn.vibrancyEffect = nil;
+    showBannerBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
+                                    [UIBlurEffect effectWithStyle:
+                                     UIBlurEffectStyleExtraLight]];
     [showBannerBtn addTarget:self action:@selector(showBannerBtnClicked)
             forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:showBannerBtn];
+    [effectView.contentView addSubview:showBannerBtn];
+    
+    @weakify(self);
+    [showBannerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.center.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(160, 40));
+    }];
 }
 
 - (void)showBannerBtnClicked {

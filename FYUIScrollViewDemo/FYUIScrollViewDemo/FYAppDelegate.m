@@ -20,6 +20,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:
                    [[UIScreen mainScreen] bounds]];
+    [self.window setBackgroundColor:[UIColor blackColor]];
     FYUIViewController *rootVC = [[FYUIViewController alloc] init];
     [self.window setRootViewController:rootVC];
     [self.window makeKeyAndVisible];
