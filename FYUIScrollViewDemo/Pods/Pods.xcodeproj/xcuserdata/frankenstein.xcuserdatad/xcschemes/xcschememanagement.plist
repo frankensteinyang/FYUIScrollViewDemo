@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>libextobjc.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -57,7 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4EE4F1172CB5D82F46D3F33CE5DB8527</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E41CA2ECB40C640963734378302229C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF0A0EE64338F3FF830141B1237E8C2B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E017D606296FF853F4C2EAD8B9919712</key>
+		<key>AF9C5084713F3175DBC4EE80C20BC3F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
