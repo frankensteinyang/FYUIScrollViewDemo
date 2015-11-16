@@ -52,6 +52,11 @@ UI_APPEARANCE_SELECTOR;
 @property (strong, nonatomic) NSArray                *buttonsTexts;
 @property (strong, nonatomic) NSString               *message;
 
+- (void)setTitleColor:(UIColor *)color
+    forAlertViewStyle:(FYAlertViewStyle)style UI_APPEARANCE_SELECTOR;
+- (void)setDefaultTitle:(NSString *)defaultTitle
+      forAlertViewStyle:(FYAlertViewStyle)style UI_APPEARANCE_SELECTOR;
+
 + (void)hideAll;
 
 - (id)init;
@@ -62,6 +67,7 @@ UI_APPEARANCE_SELECTOR;
                               NSInteger buttonIndex))callBackBlock;
 
 - (void)show;
+- (void)showAsMessage;
 - (void)hide;
 
 @end

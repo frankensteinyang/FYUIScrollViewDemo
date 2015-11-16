@@ -221,6 +221,7 @@ typedef NS_ENUM(NSUInteger, FYAlertViewDisplayStyle) {
     }
 }
 
+#pragma mark - Implementation Methods
 
 - (void)show {
     _alertDisplayStyle = FYAlertViewDisplayStyleDynamics;
@@ -300,6 +301,40 @@ typedef NS_ENUM(NSUInteger, FYAlertViewDisplayStyle) {
                            [weakSelf hide];
         });
     }
+}
+
+- (void)showAsMessage {
+    _alertDisplayStyle = FYAlertViewDisplayStyleMessage;
+    [self addSubviewsWithOverlay:NO];
+    [self addToSuperview];
+    
+    _alertView.center = CGPointMake(CGRectGetMidX(self.frame),
+                                    CGRectGetMinY(self.frame) -
+                                    _alertView.frame.size.height / 2.0f);
+    self.alpha = 1.0f;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hide)
+                                                 name:FYViewHideAllNotifiKey
+                                               object:nil];
+    [self becomeFirstResponder];
+    [UIView animateWithDuration:0.4f delay:0
+                        options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self->_alertView.center =
+                            CGPointMake(CGRectGetMidX(self.frame),
+                                        CGRectGetMinY(self.frame) +
+                                        self->_alertView.frame.size.height /
+                                        2.0f);
+    } completion:^(BOOL finished) {}];
+    
+    if (_timeToClose) {
+        __weak FYAlertView *weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                                     (int64_t)(_timeToClose * NSEC_PER_SEC)),
+                       dispatch_get_main_queue(), ^{
+            [weakSelf hide];
+        });
+    }
+    
 }
 
 - (void)hide {
@@ -519,6 +554,52 @@ typedef NS_ENUM(NSUInteger, FYAlertViewDisplayStyle) {
     }
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.type == UIEventTypeMotion &&
+        event.subtype == UIEventSubtypeMotionShake) {
+        [self shake];
+    }
+}
+
+- (void)shake {
+    CGFloat angularVelocity = ((float)rand() / RAND_MAX) - 0.5f;
+    UIDynamicItemBehavior *alertViewBehavior = [[UIDynamicItemBehavior alloc]
+                                                initWithItems:@[_alertView]];
+    [alertViewBehavior addAngularVelocity:angularVelocity forItem:_alertView];
+    [_animator addBehavior:alertViewBehavior];
+    
+    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc]
+                                    initWithItems:@[_alertView]
+                                    mode:UIPushBehaviorModeInstantaneous];
+    pushBehavior.magnitude = 0.0f;
+    pushBehavior.angle = 0.0f;
+    [_animator addBehavior:pushBehavior];
+    pushBehavior.pushDirection = CGVectorMake((((float)rand() / RAND_MAX)
+                                               - 0.5f) * 20.0f, -10.0f -
+                                              ((float)rand() / RAND_MAX) *
+                                              10.0f);
+    pushBehavior.active = YES;
+}
+
+- (void)setLabel:(UILabel *)label text:(NSString *)text {
+    label.lineBreakMode   = NSLineBreakByWordWrapping;
+    label.numberOfLines   = 0;
+    CGRect labelRect      = label.frame;
+    labelRect.size.height = 0;
+    CGRect newRect        = [text
+                             boundingRectWithSize:labelRect.size
+                             options:NSStringDrawingUsesLineFragmentOrigin
+                             attributes:@{ NSFontAttributeName:label.font }
+                             context:nil];
+    labelRect.size.height = newRect.size.height;
+    label.frame           = labelRect;
+    label.text            = text;
+}
+
 - (void)aletViewPanGesture:(UIPanGestureRecognizer*)gestureRecognizer {
     if (_tapToClose) {
         CGPoint location = [gestureRecognizer locationInView:self];
@@ -593,21 +674,6 @@ typedef NS_ENUM(NSUInteger, FYAlertViewDisplayStyle) {
                                           }];
                      }];
     [self hide];
-}
-
-- (void)setLabel:(UILabel *)label text:(NSString *)text {
-    label.lineBreakMode   = NSLineBreakByWordWrapping;
-    label.numberOfLines   = 0;
-    CGRect labelRect      = label.frame;
-    labelRect.size.height = 0;
-    CGRect newRect        = [text
-                      boundingRectWithSize:labelRect.size
-                      options:NSStringDrawingUsesLineFragmentOrigin
-                      attributes:@{ NSFontAttributeName:label.font }
-                      context:nil];
-    labelRect.size.height = newRect.size.height;
-    label.frame           = labelRect;
-    label.text            = text;
 }
 
 @end
