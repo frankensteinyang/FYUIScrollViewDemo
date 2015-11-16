@@ -8,6 +8,7 @@
 
 #import "FYUIViewController.h"
 #import "FYUIButton.h"
+#import "FYAlertView.h"
 
 #import <libextobjc/EXTScope.h>
 #import <Masonry/Masonry.h>
@@ -47,7 +48,9 @@
 }
 
 - (void)showBannerBtnClicked {
-    
+    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
+                                                 andMessage:@"很酷的提示框！"];
+    [alert show];
 }
 
 @end

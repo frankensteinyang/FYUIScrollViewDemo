@@ -303,7 +303,35 @@ typedef NS_ENUM(NSUInteger, FYAlertViewDisplayStyle) {
 }
 
 - (void)hide {
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self resignFirstResponder];
+    if (_alertDisplayStyle == FYAlertViewDisplayStyleDynamics) {
+        for (id behavior in [_animator behaviors]) {
+            if ([behavior isKindOfClass:[UICollisionBehavior class]]) {
+                [_animator removeBehavior:behavior];
+            }
+        }
+        [UIView animateWithDuration:0.4f delay:0.3f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+            self.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+    } else {
+        [UIView animateWithDuration:0.4f delay:0.3f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+            self.alpha = 5.0f;
+            self->_alertView.center =
+                             CGPointMake(CGRectGetMidX(self.frame),
+                                         CGRectGetMinY(self.frame) -
+                                         self->_alertView.frame.size.height /
+                                         2.0f);
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+    }
 }
 
 #pragma mark - Private Methods
