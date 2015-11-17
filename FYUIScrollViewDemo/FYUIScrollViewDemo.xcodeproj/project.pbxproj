@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B539F125D8D84290A6162BEB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E8953DB53B634AC930C871 /* libPods.a */; };
+		EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */; };
 		EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012211BF33D5100B0F922 /* FYAppDelegate.m */; };
 		EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012331BF3560100B0F922 /* FYUIViewController.m */; };
 		EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012391BF357AA00B0F922 /* FYUIButton.m */; };
@@ -40,6 +41,8 @@
 		A1E8953DB53B634AC930C871 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B470CE6385F2A6F1C17709 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0BED3E1BF4933E00DAF12C /* FYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDefine.h; sourceTree = "<group>"; };
+		EF0F6FC01BFB4A3300A79C76 /* FYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBannerView.h; sourceTree = "<group>"; };
+		EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerView.m; sourceTree = "<group>"; };
 		EFF012201BF33D5100B0F922 /* FYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAppDelegate.h; sourceTree = "<group>"; };
 		EFF012211BF33D5100B0F922 /* FYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAppDelegate.m; sourceTree = "<group>"; };
 		EFF012321BF3560100B0F922 /* FYUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUIViewController.h; sourceTree = "<group>"; };
@@ -113,6 +116,29 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		EF0F6FBD1BFB48D000A79C76 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		EF0F6FBE1BFB490800A79C76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF0F6FBF1BFB499000A79C76 /* FYBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				EF0F6FC01BFB4A3300A79C76 /* FYBannerView.h */,
+				EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */,
+			);
+			path = FYBannerView;
+			sourceTree = "<group>";
+		};
 		EFF012311BF3560100B0F922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +151,7 @@
 		EFF012351BF3566500B0F922 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EF0F6FBF1BFB499000A79C76 /* FYBannerView */,
 				EFF012371BF3575E00B0F922 /* FYUIButton */,
 				EFF012361BF3574600B0F922 /* FYAlertView */,
 			);
@@ -174,9 +201,11 @@
 		EFF5C4ED1BF32BE600B6A52D /* FYUIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				EF0BED3B1BF4926800DAF12C /* Utilities */,
+				EF0F6FBE1BFB490800A79C76 /* Models */,
 				EFF012351BF3566500B0F922 /* Views */,
 				EFF012311BF3560100B0F922 /* Controllers */,
+				EF0F6FBD1BFB48D000A79C76 /* Stores */,
+				EF0BED3B1BF4926800DAF12C /* Utilities */,
 				EFF012201BF33D5100B0F922 /* FYAppDelegate.h */,
 				EFF012211BF33D5100B0F922 /* FYAppDelegate.m */,
 				EFF5C4EE1BF32BE600B6A52D /* Supporting Files */,
@@ -396,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */,
+				EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */,
 				EFF5C4F01BF32BE600B6A52D /* main.m in Sources */,
 				EFF0123D1BF357DF00B0F922 /* FYAlertView.m in Sources */,
 				EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */,
