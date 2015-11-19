@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B539F125D8D84290A6162BEB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E8953DB53B634AC930C871 /* libPods.a */; };
 		EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */; };
+		EFB04EE71BFC847200E0C2D9 /* FYBannerService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */; };
+		EFB04EEA1BFC84E700E0C2D9 /* FYPublicService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB04EE91BFC84E700E0C2D9 /* FYPublicService.m */; };
 		EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012211BF33D5100B0F922 /* FYAppDelegate.m */; };
 		EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012331BF3560100B0F922 /* FYUIViewController.m */; };
 		EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012391BF357AA00B0F922 /* FYUIButton.m */; };
@@ -43,6 +45,10 @@
 		EF0BED3E1BF4933E00DAF12C /* FYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDefine.h; sourceTree = "<group>"; };
 		EF0F6FC01BFB4A3300A79C76 /* FYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBannerView.h; sourceTree = "<group>"; };
 		EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerView.m; sourceTree = "<group>"; };
+		EFB04EE51BFC847200E0C2D9 /* FYBannerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBannerService.h; sourceTree = "<group>"; };
+		EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerService.m; sourceTree = "<group>"; };
+		EFB04EE81BFC84E700E0C2D9 /* FYPublicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPublicService.h; sourceTree = "<group>"; };
+		EFB04EE91BFC84E700E0C2D9 /* FYPublicService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPublicService.m; sourceTree = "<group>"; };
 		EFF012201BF33D5100B0F922 /* FYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAppDelegate.h; sourceTree = "<group>"; };
 		EFF012211BF33D5100B0F922 /* FYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAppDelegate.m; sourceTree = "<group>"; };
 		EFF012321BF3560100B0F922 /* FYUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUIViewController.h; sourceTree = "<group>"; };
@@ -139,6 +145,25 @@
 			path = FYBannerView;
 			sourceTree = "<group>";
 		};
+		EFB04EE31BFC81B100E0C2D9 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				EFB04EE41BFC81D800E0C2D9 /* BannerService */,
+				EFB04EE81BFC84E700E0C2D9 /* FYPublicService.h */,
+				EFB04EE91BFC84E700E0C2D9 /* FYPublicService.m */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		EFB04EE41BFC81D800E0C2D9 /* BannerService */ = {
+			isa = PBXGroup;
+			children = (
+				EFB04EE51BFC847200E0C2D9 /* FYBannerService.h */,
+				EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */,
+			);
+			name = BannerService;
+			sourceTree = "<group>";
+		};
 		EFF012311BF3560100B0F922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +226,7 @@
 		EFF5C4ED1BF32BE600B6A52D /* FYUIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EFB04EE31BFC81B100E0C2D9 /* Public */,
 				EF0F6FBE1BFB490800A79C76 /* Models */,
 				EFF012351BF3566500B0F922 /* Views */,
 				EFF012311BF3560100B0F922 /* Controllers */,
@@ -427,9 +453,11 @@
 				EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */,
 				EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */,
 				EFF5C4F01BF32BE600B6A52D /* main.m in Sources */,
+				EFB04EEA1BFC84E700E0C2D9 /* FYPublicService.m in Sources */,
 				EFF0123D1BF357DF00B0F922 /* FYAlertView.m in Sources */,
 				EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */,
 				EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */,
+				EFB04EE71BFC847200E0C2D9 /* FYBannerService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

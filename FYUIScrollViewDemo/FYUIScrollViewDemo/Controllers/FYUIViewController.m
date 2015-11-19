@@ -9,6 +9,7 @@
 #import "FYUIViewController.h"
 #import "FYUIButton.h"
 #import "FYAlertView.h"
+#import "FYPublicService.h"
 
 #import <libextobjc/EXTScope.h>
 #import <Masonry/Masonry.h>
@@ -48,9 +49,22 @@
 }
 
 - (void)showBannerBtnClicked {
-    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
-                                                 andMessage:@"很酷的提示框！"];
-    [alert show];
+//    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
+//                                                 andMessage:@"很酷的提示框！"];
+//    [alert show];
+    @weakify(self);
+    [FYPublicService fy_getResource:^(UIView *bannerView) {
+        @strongify(self);
+        if (bannerView) {
+            bannerView.frame = CGRectMake(40, [UIScreen mainScreen].bounds.size.height - 60, [UIScreen mainScreen].bounds.size.width - 80, 40);
+            bannerView.tag = 168;
+            [self.view addSubview:bannerView];
+        }
+    } url:^(NSString *url) {
+//        @strongify(self);
+        //
+//        [self presentViewController:nil animated:NO completion:nil];
+    }];
 }
 
 @end
