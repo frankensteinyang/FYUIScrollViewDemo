@@ -32,7 +32,6 @@
     showBannerBtn.text = @"Banner";
     showBannerBtn.font = [UIFont systemFontOfSize:14.0];
     showBannerBtn.backgroundColor = [UIColor whiteColor];
-//    showBannerBtn.vibrancyEffect = nil;
     showBannerBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
                                     [UIBlurEffect effectWithStyle:
                                      UIBlurEffectStyleExtraLight]];
@@ -40,18 +39,36 @@
             forControlEvents:UIControlEventTouchUpInside];
     [effectView.contentView addSubview:showBannerBtn];
     
+    FYUIButton *showAlertBtn = [[FYUIButton alloc]
+                                 initWithFrame:CGRectZero
+                                 style:FYUIButtonStyleTranslucent];
+    showAlertBtn.text = @"Alert";
+    showAlertBtn.font = [UIFont systemFontOfSize:14.0];
+    showAlertBtn.backgroundColor = [UIColor whiteColor];
+    showAlertBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
+                                    [UIBlurEffect effectWithStyle:
+                                     UIBlurEffectStyleExtraLight]];
+    [showAlertBtn addTarget:self action:@selector(showAlertBtnClicked)
+            forControlEvents:UIControlEventTouchUpInside];
+    [effectView.contentView addSubview:showAlertBtn];
+    
     @weakify(self);
     [showBannerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.center.mas_equalTo(self.view);
+        make.left.mas_equalTo(self.view.frame.origin.x + 10);
+        make.top.mas_equalTo(self.view.frame.origin.y + 10);
+        make.size.mas_equalTo(CGSizeMake(160, 40));
+    }];
+    [showAlertBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.left.mas_equalTo(self.view.frame.origin.x + 180);
+        make.top.mas_equalTo(self.view.frame.origin.y + 10);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
 }
 
 - (void)showBannerBtnClicked {
-//    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
-//                                                 andMessage:@"很酷的提示框！"];
-//    [alert show];
+    
     @weakify(self);
     [FYPublicService fy_getResource:^(UIView *bannerView) {
         @strongify(self);
@@ -65,6 +82,12 @@
         //
 //        [self presentViewController:nil animated:NO completion:nil];
     }];
+}
+
+- (void)showAlertBtnClicked {
+
+    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框" andMessage:@"很酷的提示框！"];
+    [alert show];
 }
 
 @end
