@@ -10,6 +10,8 @@
 #import "FYUIButton.h"
 #import "FYAlertView.h"
 #import "FYPublicService.h"
+#import "FYDefine.h"
+#import "FYWebViewController.h"
 
 #import <libextobjc/EXTScope.h>
 #import <Masonry/Masonry.h>
@@ -30,7 +32,7 @@
                                  initWithFrame:CGRectZero
                                  style:FYUIButtonStyleTranslucent];
     showBannerBtn.text = @"Banner";
-    showBannerBtn.font = [UIFont systemFontOfSize:14.0];
+    showBannerBtn.font = [UIFont systemFontOfSize:14.0f];
     showBannerBtn.backgroundColor = [UIColor whiteColor];
     showBannerBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
                                     [UIBlurEffect effectWithStyle:
@@ -43,7 +45,7 @@
                                  initWithFrame:CGRectZero
                                  style:FYUIButtonStyleTranslucent];
     showAlertBtn.text = @"Alert";
-    showAlertBtn.font = [UIFont systemFontOfSize:14.0];
+    showAlertBtn.font = [UIFont systemFontOfSize:14.0f];
     showAlertBtn.backgroundColor = [UIColor whiteColor];
     showAlertBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
                                     [UIBlurEffect effectWithStyle:
@@ -55,14 +57,14 @@
     @weakify(self);
     [showBannerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.left.mas_equalTo(self.view.frame.origin.x + 10);
-        make.top.mas_equalTo(self.view.frame.origin.y + 10);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.top.mas_equalTo(self.view.frame.origin.y + 40);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
     [showAlertBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
-        make.left.mas_equalTo(self.view.frame.origin.x + 180);
-        make.top.mas_equalTo(self.view.frame.origin.y + 10);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.top.mas_equalTo(showBannerBtn.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
 }
@@ -73,20 +75,25 @@
     [FYPublicService fy_getResource:^(UIView *bannerView) {
         @strongify(self);
         if (bannerView) {
-            bannerView.frame = CGRectMake(40, [UIScreen mainScreen].bounds.size.height - 60, [UIScreen mainScreen].bounds.size.width - 80, 40);
+            bannerView.frame =
+            CGRectMake(40, [UIScreen mainScreen].bounds.size.height -
+                       60, [UIScreen mainScreen].bounds.size.width - 80, 40);
             bannerView.tag = 168;
             [self.view addSubview:bannerView];
         }
     } url:^(NSString *url) {
-//        @strongify(self);
-        //
-//        [self presentViewController:nil animated:NO completion:nil];
+        FYLog(@"%@", url);
+        @strongify(self);
+        FYWebViewController *webVC = [[FYWebViewController alloc] init];
+        [self presentViewController:webVC animated:NO completion:nil];
+        webVC.url = url;
     }];
 }
 
 - (void)showAlertBtnClicked {
 
-    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框" andMessage:@"很酷的提示框！"];
+    FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
+                                                 andMessage:@"很酷的提示框！"];
     [alert show];
 }
 
