@@ -6,6 +6,9 @@
 //  Copyright © 2015 Frankenstein Yang. All rights reserved.
 //
 
+#import <libextobjc/EXTScope.h>
+#import <Masonry/Masonry.h>
+
 #import "FYUIViewController.h"
 #import "FYUIButton.h"
 #import "FYAlertView.h"
@@ -13,21 +16,18 @@
 #import "FYDefine.h"
 #import "FYWebViewController.h"
 
-#import <libextobjc/EXTScope.h>
-#import <Masonry/Masonry.h>
+@interface FYUIViewController ()
+
+@property (nonatomic, strong) UIVisualEffectView *effectView;
+
+@end
 
 @implementation FYUIViewController
 
 - (void)viewDidLoad {
     
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]
-                                      initWithEffect:
-                                      [UIBlurEffect effectWithStyle:
-                                       UIBlurEffectStyleExtraLight]];
-    effectView.frame = self.view.bounds;
-    effectView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:effectView];
-    
+    [self.view setBackgroundColor:[UIColor yellowColor]];
+    [self.view addSubview:self.effectView];
     FYUIButton *showBannerBtn = [[FYUIButton alloc]
                                  initWithFrame:CGRectZero
                                  style:FYUIButtonStyleTranslucent];
@@ -39,7 +39,7 @@
                                      UIBlurEffectStyleExtraLight]];
     [showBannerBtn addTarget:self action:@selector(showBannerBtnClicked)
             forControlEvents:UIControlEventTouchUpInside];
-    [effectView.contentView addSubview:showBannerBtn];
+    [_effectView.contentView addSubview:showBannerBtn];
     
     FYUIButton *showAlertBtn = [[FYUIButton alloc]
                                  initWithFrame:CGRectZero
@@ -52,9 +52,14 @@
                                      UIBlurEffectStyleExtraLight]];
     [showAlertBtn addTarget:self action:@selector(showAlertBtnClicked)
             forControlEvents:UIControlEventTouchUpInside];
-    [effectView.contentView addSubview:showAlertBtn];
+    [_effectView.contentView addSubview:showAlertBtn];
     
     @weakify(self);
+    [_effectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.edges.equalTo(self.view).with.insets
+        (UIEdgeInsetsMake(20.0f, 20.0f, 20.0f, 20.0f));
+    }];
     [showBannerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
         make.centerX.mas_equalTo(self.view.mas_centerX);
@@ -71,15 +76,23 @@
 
 - (void)showBannerBtnClicked {
     
+    [[_effectView viewWithTag:168] removeFromSuperview];
     @weakify(self);
     [FYPublicService fy_getResource:^(UIView *bannerView) {
         @strongify(self);
         if (bannerView) {
-            bannerView.frame =
-            CGRectMake(40, [UIScreen mainScreen].bounds.size.height -
-                       60, [UIScreen mainScreen].bounds.size.width - 80, 40);
+            
+            bannerView.frame = CGRectZero;
             bannerView.tag = 168;
-            [self.view addSubview:bannerView];
+            [self.effectView addSubview:bannerView];
+            
+            [bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(0);
+                make.top.mas_equalTo(_effectView.frame.size.height - 50);
+                make.size.mas_equalTo
+                (CGSizeMake(_effectView.frame.size.width, 50));
+            }];
+            
         }
     } url:^(NSString *url) {
         FYLog(@"%@", url);
@@ -95,6 +108,18 @@
     FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
                                                  andMessage:@"很酷的提示框！"];
     [alert show];
+}
+
+#pragma mark - 懒加载
+
+- (UIVisualEffectView *)effectView {
+    if (!_effectView) {
+        _effectView =
+        [[UIVisualEffectView alloc] initWithEffect:
+         [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+        [_effectView setBackgroundColor:[UIColor redColor]];
+    }
+    return _effectView;
 }
 
 @end

@@ -23,7 +23,7 @@ PODS:
   - AFNetworking/UIKit (2.6.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - JSONKit-NoWarning (1.2)
+  - JSONModel (1.1.2)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -73,7 +73,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6.2)
   - AFNetworking+AutoRetry (~> 0.0.5)
-  - JSONKit-NoWarning (~> 1.2)
+  - JSONModel (~> 1.1.2)
   - libextobjc (~> 0.4.1)
   - Masonry (~> 0.6.3)
   - SDWebImage (~> 3.7.3)
@@ -81,7 +81,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
   AFNetworking+AutoRetry: 5987ec96155e58fe356f1a3e91e79e5f3be6296a
-  JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
+  JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   ObjcAssociatedObjectHelpers: 686c291f292c26a49b9b1fa7d58130a8d35d59d2

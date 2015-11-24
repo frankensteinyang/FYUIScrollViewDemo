@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JSONKit-NoWarning.xcscheme</key>
+		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>153298C28F171DAB34506507A8E1A36C</key>
+		<key>09FA060F1A0492FB25232F489AC4E573</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EE4F1172CB5D82F46D3F33CE5DB8527</key>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>5FD897B4E1E00AEB7DA8AD62B33390AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>67629251DC9DF5A558F4F1EA311D83D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,11 +83,6 @@
 			<true/>
 		</dict>
 		<key>A718D77130BFF9FD06BCBBEFE51CB088</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AF9C5084713F3175DBC4EE80C20BC3F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

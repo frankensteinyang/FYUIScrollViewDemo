@@ -10,7 +10,7 @@
 
 typedef void (^FYBannerViewBlock)(NSString *url);
 
-@interface FYBannerView : UIScrollView
+@interface FYBannerView : UIView
 
 - (instancetype)initWithBlock:(FYBannerViewBlock)block;
 

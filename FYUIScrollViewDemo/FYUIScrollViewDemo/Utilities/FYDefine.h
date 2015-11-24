@@ -16,4 +16,9 @@ __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #   define FYLog(...)
 #endif
 
+#pragma mark - iOS系统版本判断
+#define kFYIOS7_OR_LATER \
+([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != \
+NSOrderedAscending)
+
 #endif /* FYDefine_h */
