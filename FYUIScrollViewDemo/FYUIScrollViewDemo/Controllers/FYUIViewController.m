@@ -74,6 +74,10 @@
     }];
 }
 
+#ifdef DEBUG
+    // TEST
+#endif
+
 - (void)showBannerBtnClicked {
     
     [[_effectView viewWithTag:168] removeFromSuperview];

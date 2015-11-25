@@ -14,6 +14,7 @@
 		EF36318E1C047FDE00DEA179 /* FYImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF36318D1C047FDE00DEA179 /* FYImageDataModel.m */; };
 		EFB04EE71BFC847200E0C2D9 /* FYBannerService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */; };
 		EFB04EEA1BFC84E700E0C2D9 /* FYPublicService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB04EE91BFC84E700E0C2D9 /* FYPublicService.m */; };
+		EFBB284D1C05CD52004EF710 /* FYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBB284C1C05CD52004EF710 /* FYHelper.m */; };
 		EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012211BF33D5100B0F922 /* FYAppDelegate.m */; };
 		EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012331BF3560100B0F922 /* FYUIViewController.m */; };
 		EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012391BF357AA00B0F922 /* FYUIButton.m */; };
@@ -58,6 +59,8 @@
 		EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerService.m; sourceTree = "<group>"; };
 		EFB04EE81BFC84E700E0C2D9 /* FYPublicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPublicService.h; sourceTree = "<group>"; };
 		EFB04EE91BFC84E700E0C2D9 /* FYPublicService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPublicService.m; sourceTree = "<group>"; };
+		EFBB284B1C05CD52004EF710 /* FYHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHelper.h; sourceTree = "<group>"; };
+		EFBB284C1C05CD52004EF710 /* FYHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHelper.m; sourceTree = "<group>"; };
 		EFF012201BF33D5100B0F922 /* FYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAppDelegate.h; sourceTree = "<group>"; };
 		EFF012211BF33D5100B0F922 /* FYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAppDelegate.m; sourceTree = "<group>"; };
 		EFF012321BF3560100B0F922 /* FYUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUIViewController.h; sourceTree = "<group>"; };
@@ -177,6 +180,23 @@
 			name = BannerService;
 			sourceTree = "<group>";
 		};
+		EFBB28491C05CD19004EF710 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EFBB284A1C05CD19004EF710 /* Helper */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EFBB284A1C05CD19004EF710 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EFBB284B1C05CD52004EF710 /* FYHelper.h */,
+				EFBB284C1C05CD52004EF710 /* FYHelper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		EFF012311BF3560100B0F922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +261,7 @@
 		EFF5C4ED1BF32BE600B6A52D /* FYUIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EFBB28491C05CD19004EF710 /* Classes */,
 				EFB04EE31BFC81B100E0C2D9 /* Public */,
 				EF0F6FBE1BFB490800A79C76 /* Models */,
 				EFF012351BF3566500B0F922 /* Views */,
@@ -465,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBB284D1C05CD52004EF710 /* FYHelper.m in Sources */,
 				EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */,
 				EF3631851C03057600DEA179 /* FYWebViewController.m in Sources */,
 				EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */,
