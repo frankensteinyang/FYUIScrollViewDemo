@@ -7,7 +7,18 @@
 //
 
 #import "FYStore.h"
+#import "FYConfigurationModel.h"
 
 @implementation FYStore
+
+static FYStore *SINGLETON = nil;
+
++ (FYStore *)sharedInstance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SINGLETON = [[super allocWithZone:NULL] init];
+    });
+    return SINGLETON;
+}
 
 @end

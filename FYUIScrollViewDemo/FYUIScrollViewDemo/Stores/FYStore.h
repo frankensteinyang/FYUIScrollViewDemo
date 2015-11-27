@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class FYConfigurationModel;
+
 @interface FYStore : NSObject
+
+@property (nonatomic, strong) FYConfigurationModel *configModel;
+
++ (FYStore *)sharedInstance;
 
 @end

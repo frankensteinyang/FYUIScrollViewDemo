@@ -14,6 +14,8 @@
 #import "FYBannerItemView.h"
 #import "FYImageDataModel.h"
 #import "FYHelper.h"
+#import "FYStore.h"
+#import "FYConfigurationModel.h"
 
 #define kITEM_WIDTH  (self.frame.size.width)
 #define kITEM_HEIGHT (self.frame.size.height)
@@ -173,8 +175,9 @@
 
 - (void)fireTimer {
     [self killTimer];
-    NSInteger duration;
-    // stop...
+    NSInteger duration = [[FYStore sharedInstance].configModel.play_duration integerValue];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(goToNext) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)killTimer {
@@ -183,6 +186,12 @@
             [_timer invalidate];
         }
     }
+}
+
+- (void)goToNext {
+    CGFloat targetX = self.scrollView.contentOffset.x + self.scrollView.frame.size.width;
+    targetX = (NSInteger)(targetX / kITEM_WIDTH) * kITEM_WIDTH;
+    [self.scrollView setContentOffset:CGPointMake(targetX, 0) animated:YES];
 }
 
 #pragma mark - Event Handlers
