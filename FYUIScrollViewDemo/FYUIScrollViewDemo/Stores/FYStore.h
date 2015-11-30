@@ -16,4 +16,7 @@
 
 + (FYStore *)sharedInstance;
 
+- (void)redirectURLWithContentID:(NSUInteger)contentID
+                     redirectUrl:(NSString *)redirectUrl;
+
 @end

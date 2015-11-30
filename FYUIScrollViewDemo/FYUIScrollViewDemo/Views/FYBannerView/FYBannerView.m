@@ -104,23 +104,27 @@
         // central view
         for (NSInteger i = 0; i < _dataArray.count; i ++) {
             NSInteger tag = 169 + i;
-            [self createScrollViewItemWithTag:tag andData:[_dataArray objectAtIndex:i]];
+            [self createScrollViewItemWithTag:tag
+                                      andData:[_dataArray objectAtIndex:i]];
         }
         
         // left view
         NSInteger tag_right = 168;
-        [self createScrollViewItemWithTag:tag_right andData:[_dataArray lastObject]];
+        [self createScrollViewItemWithTag:tag_right
+                                  andData:[_dataArray lastObject]];
         
         // right view
         NSInteger tag_left = 169 + [_dataArray count];
-        [self createScrollViewItemWithTag:tag_left andData:[_dataArray firstObject]];
+        [self createScrollViewItemWithTag:tag_left
+                                  andData:[_dataArray firstObject]];
         
     }
 }
 
 #pragma mark - Private Methods
 
-- (void)createScrollViewItemWithTag:(NSInteger)tag andData:(FYImageDataModel *)model {
+- (void)createScrollViewItemWithTag:(NSInteger)tag
+                            andData:(FYImageDataModel *)model {
     if ([self.scrollView viewWithTag:tag]) {
         [[self.scrollView viewWithTag:tag] removeFromSuperview];
     }
@@ -132,10 +136,13 @@
     } else {
         placedTag = (tag - 169) + 1;
     }
-    FYBannerItemView *itemView = [[FYBannerItemView alloc] initWithFrame:CGRectMake(kITEM_WIDTH * placedTag, 0, kITEM_WIDTH, kITEM_HEIGHT)];
+    FYBannerItemView *itemView = [[FYBannerItemView alloc] initWithFrame:
+                                  CGRectMake(kITEM_WIDTH * placedTag, 0,
+                                             kITEM_WIDTH, kITEM_HEIGHT)];
     itemView.tag = tag;
     @weakify(self);
-    [FYHelper downloadImageWithUrl:model.image relatedLink:model.url downloadImageCallBack:^(UIImage *image, NSString *link) {
+    [FYHelper downloadImageWithUrl:model.image relatedLink:model.url
+             downloadImageCallBack:^(UIImage *image, NSString *link) {
         @strongify(self);
         if (image) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -154,7 +161,8 @@
     self.pageControl.numberOfPages = [_dataArray count];
     self.pageControl.currentPage = 0;
     [self scrollToIndex:0];
-    CGFloat targetX = self.scrollView.contentOffset.x + self.scrollView.frame.size.width;
+    CGFloat targetX = self.scrollView.contentOffset.x
+    + self.scrollView.frame.size.width;
     targetX = (NSInteger)(targetX / kITEM_WIDTH) * kITEM_WIDTH;
     [self.scrollView setContentOffset:CGPointMake(targetX, 0) animated:NO];
 }
@@ -164,7 +172,8 @@
         if (aIndex >= ([self.dataArray count])) {
             aIndex = [self.dataArray count] - 1;
         }
-        [self.scrollView setContentOffset:CGPointMake(kITEM_WIDTH * (aIndex + 1), 0) animated:YES];
+        [self.scrollView setContentOffset:
+         CGPointMake(kITEM_WIDTH * (aIndex + 1), 0) animated:YES];
     } else {
         [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     }
@@ -176,7 +185,11 @@
 - (void)fireTimer {
     [self killTimer];
     NSInteger duration = [[FYStore sharedInstance].configModel.play_duration integerValue];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(goToNext) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:duration
+                                              target:self
+                                            selector:@selector(goToNext)
+                                            userInfo:nil
+                                             repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
@@ -219,7 +232,8 @@
                 _bannerBlock(itemView.url);
                 for (FYImageDataModel *model in self.dataArray) {
                     if ([model.url isEqualToString:itemView.url]) {
-                        // stop...
+                        [[FYStore sharedInstance] redirectURLWithContentID:
+                         [model.contentID integerValue] redirectUrl:model.url];
                     }
                 }
             }
@@ -252,10 +266,12 @@
     if ([self.dataArray count] >= 1) {
         if (targetX >= kITEM_WIDTH * ([self.dataArray count] + 1)) {
             targetX = kITEM_WIDTH;
-            [self.scrollView setContentOffset:CGPointMake(targetX, 0) animated:NO];
+            [self.scrollView setContentOffset:
+             CGPointMake(targetX, 0) animated:NO];
         } else if (targetX <= 0) {
             targetX = kITEM_WIDTH * [self.dataArray count];
-            [self.scrollView setContentOffset:CGPointMake(targetX, 0) animated:NO];
+            [self.scrollView setContentOffset:
+             CGPointMake(targetX, 0) animated:NO];
         }
     }
     NSInteger page = (self.scrollView.contentOffset.x + kITEM_WIDTH / 2.0) / kITEM_WIDTH;
@@ -271,7 +287,8 @@
     [self fireTimer];
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
+                  willDecelerate:(BOOL)decelerate {
     if (!decelerate) {
         CGFloat targetX = _scrollView.contentOffset.x + _scrollView.frame.size.width;
         targetX = (NSInteger)(targetX / kITEM_WIDTH) * kITEM_WIDTH;

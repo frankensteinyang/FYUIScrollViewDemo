@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy) NSString <Optional> *image;
 @property (nonatomic, copy) NSString <Optional> *url;
+@property (nonatomic, copy) NSString <Optional> *contentID;
 
 @end

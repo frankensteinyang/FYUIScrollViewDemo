@@ -21,4 +21,12 @@ static FYStore *SINGLETON = nil;
     return SINGLETON;
 }
 
+- (void)redirectURLWithContentID:(NSUInteger)contentID
+                     redirectUrl:(NSString *)redirectUrl {
+    if (!redirectUrl || (redirectUrl && ![redirectUrl length])) {
+        return;
+    }
+    
+}
+
 @end
