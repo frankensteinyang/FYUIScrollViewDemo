@@ -118,6 +118,7 @@
         [self createScrollViewItemWithTag:tag_left
                                   andData:[_dataArray firstObject]];
         
+        [self setInitialPosition];
     }
 }
 

@@ -26,33 +26,35 @@
 
 - (void)viewDidLoad {
     
-    [self.view setBackgroundColor:[UIColor yellowColor]];
     [self.view addSubview:self.effectView];
-    FYUIButton *showBannerBtn = [[FYUIButton alloc]
-                                 initWithFrame:CGRectZero
-                                 style:FYUIButtonStyleTranslucent];
-    showBannerBtn.text = @"Banner";
+    FYUIButton *showBannerBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
+                                                            style:FYUIButtonStyleTranslucent];
+    showBannerBtn.text = @"广告";
     showBannerBtn.font = [UIFont systemFontOfSize:14.0f];
     showBannerBtn.backgroundColor = [UIColor whiteColor];
-    showBannerBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
-                                    [UIBlurEffect effectWithStyle:
-                                     UIBlurEffectStyleExtraLight]];
+    showBannerBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
     [showBannerBtn addTarget:self action:@selector(showBannerBtnClicked)
             forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:showBannerBtn];
     
-    FYUIButton *showAlertBtn = [[FYUIButton alloc]
-                                 initWithFrame:CGRectZero
-                                 style:FYUIButtonStyleTranslucent];
-    showAlertBtn.text = @"Alert";
+    FYUIButton *showAlertBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
+                                                           style:FYUIButtonStyleTranslucent];
+    showAlertBtn.text = @"提示框";
     showAlertBtn.font = [UIFont systemFontOfSize:14.0f];
     showAlertBtn.backgroundColor = [UIColor whiteColor];
-    showAlertBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:
-                                    [UIBlurEffect effectWithStyle:
-                                     UIBlurEffectStyleExtraLight]];
+    showAlertBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
     [showAlertBtn addTarget:self action:@selector(showAlertBtnClicked)
             forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:showAlertBtn];
+    
+    FYUIButton *pullToRefreshBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
+                                                               style:FYUIButtonStyleTranslucent];
+    pullToRefreshBtn.text = @"下拉刷新";
+    pullToRefreshBtn.font = [UIFont systemFontOfSize:14.0f];
+    pullToRefreshBtn.backgroundColor = [UIColor whiteColor];
+    pullToRefreshBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    [pullToRefreshBtn addTarget:self action:@selector(pullToRefreshBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [_effectView.contentView addSubview:pullToRefreshBtn];
     
     @weakify(self);
     [_effectView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,6 +72,12 @@
         @strongify(self);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.top.mas_equalTo(showBannerBtn.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(160, 40));
+    }];
+    [pullToRefreshBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.top.mas_equalTo(showAlertBtn.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
 }
@@ -112,6 +120,10 @@
     FYAlertView *alert = [[FYAlertView alloc] initWithTitle:@"弹框"
                                                  andMessage:@"很酷的提示框！"];
     [alert show];
+}
+
+- (void)pullToRefreshBtnClicked {
+
 }
 
 #pragma mark - 懒加载
