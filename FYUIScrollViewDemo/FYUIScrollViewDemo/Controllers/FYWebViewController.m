@@ -32,9 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.webView];
-    FYUIButton *backBtn = [[FYUIButton alloc]
-                           initWithFrame:CGRectZero
-                           style:FYUIButtonStyleTranslucent];
+    FYUIButton *backBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
+                                                      style:FYUIButtonStyleTranslucent];
     backBtn.text = @"Back";
     backBtn.font = [UIFont systemFontOfSize:14.0f];
     backBtn.vibrancyEffect = nil;

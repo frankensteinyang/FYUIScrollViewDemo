@@ -15,6 +15,7 @@
 #import "FYPublicService.h"
 #import "FYDefine.h"
 #import "FYWebViewController.h"
+#import "FYTableViewController.h"
 
 @interface FYUIViewController ()
 
@@ -123,7 +124,8 @@
 }
 
 - (void)pullToRefreshBtnClicked {
-
+    FYTableViewController *tableVC = [[FYTableViewController alloc] init];
+    [self presentViewController:tableVC animated:YES completion:nil];
 }
 
 #pragma mark - 懒加载

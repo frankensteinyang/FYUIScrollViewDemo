@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '64131959C6D3EE3F28D75248'
+               BlueprintIdentifier = '7FE6FA0B27B2DBD7FA646879'
                BlueprintName = 'ObjcAssociatedObjectHelpers'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libObjcAssociatedObjectHelpers.a'>
