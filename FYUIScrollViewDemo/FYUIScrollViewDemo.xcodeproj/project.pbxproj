@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B539F125D8D84290A6162BEB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E8953DB53B634AC930C871 /* libPods.a */; };
 		EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */; };
+		EF28525D1C11786E00FA954F /* FYPullToRefreshModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF28525C1C11786E00FA954F /* FYPullToRefreshModel.m */; };
 		EF3631851C03057600DEA179 /* FYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3631841C03057600DEA179 /* FYWebViewController.m */; };
 		EF3631881C0475E000DEA179 /* FYBannerItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3631871C0475E000DEA179 /* FYBannerItemView.m */; };
 		EF36318E1C047FDE00DEA179 /* FYImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF36318D1C047FDE00DEA179 /* FYImageDataModel.m */; };
@@ -53,6 +54,8 @@
 		EF0BED3E1BF4933E00DAF12C /* FYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDefine.h; sourceTree = "<group>"; };
 		EF0F6FC01BFB4A3300A79C76 /* FYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBannerView.h; sourceTree = "<group>"; };
 		EF0F6FC11BFB4A3300A79C76 /* FYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerView.m; sourceTree = "<group>"; };
+		EF28525B1C11786E00FA954F /* FYPullToRefreshModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPullToRefreshModel.h; sourceTree = "<group>"; };
+		EF28525C1C11786E00FA954F /* FYPullToRefreshModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPullToRefreshModel.m; sourceTree = "<group>"; };
 		EF3631831C03057600DEA179 /* FYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWebViewController.h; sourceTree = "<group>"; };
 		EF3631841C03057600DEA179 /* FYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWebViewController.m; sourceTree = "<group>"; };
 		EF3631861C0475E000DEA179 /* FYBannerItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBannerItemView.h; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				EFABF2811C08574A000D6AA9 /* FYConfigurationModel.m */,
 				EFABF2831C08726C000D6AA9 /* FYRedirectModel.h */,
 				EFABF2841C08726C000D6AA9 /* FYRedirectModel.m */,
+				EF28525B1C11786E00FA954F /* FYPullToRefreshModel.h */,
+				EF28525C1C11786E00FA954F /* FYPullToRefreshModel.m */,
 			);
 			name = Models;
 			path = ../Models;
@@ -516,6 +521,7 @@
 				EF7AF84B1C07114800BDCCC1 /* FYStore.m in Sources */,
 				EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */,
 				EF3631851C03057600DEA179 /* FYWebViewController.m in Sources */,
+				EF28525D1C11786E00FA954F /* FYPullToRefreshModel.m in Sources */,
 				EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */,
 				EFF5C4F01BF32BE600B6A52D /* main.m in Sources */,
 				EF3631881C0475E000DEA179 /* FYBannerItemView.m in Sources */,
