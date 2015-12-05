@@ -32,9 +32,9 @@
                                                             style:FYUIButtonStyleTranslucent];
     showBannerBtn.text = @"广告";
     showBannerBtn.font = [UIFont systemFontOfSize:14.0f];
-    showBannerBtn.backgroundColor = [UIColor whiteColor];
     showBannerBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
-    [showBannerBtn addTarget:self action:@selector(showBannerBtnClicked)
+    [showBannerBtn addTarget:self
+                      action:@selector(showBannerBtnClicked)
             forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:showBannerBtn];
     
@@ -42,27 +42,30 @@
                                                            style:FYUIButtonStyleTranslucent];
     showAlertBtn.text = @"提示框";
     showAlertBtn.font = [UIFont systemFontOfSize:14.0f];
-    showAlertBtn.backgroundColor = [UIColor whiteColor];
     showAlertBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
-    [showAlertBtn addTarget:self action:@selector(showAlertBtnClicked)
-            forControlEvents:UIControlEventTouchUpInside];
+    [showAlertBtn addTarget:self
+                     action:@selector(showAlertBtnClicked)
+           forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:showAlertBtn];
     
     FYUIButton *pullToRefreshBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
                                                                style:FYUIButtonStyleTranslucent];
     pullToRefreshBtn.text = @"下拉刷新";
     pullToRefreshBtn.font = [UIFont systemFontOfSize:14.0f];
-    pullToRefreshBtn.backgroundColor = [UIColor whiteColor];
     pullToRefreshBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
-    [pullToRefreshBtn addTarget:self action:@selector(pullToRefreshBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [pullToRefreshBtn addTarget:self
+                         action:@selector(pullToRefreshBtnClicked)
+               forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:pullToRefreshBtn];
     
-    FYUIButton *waterfallBtn = [[FYUIButton alloc] initWithFrame:CGRectZero style:FYUIButtonStyleTranslucent];
+    FYUIButton *waterfallBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
+                                                           style:FYUIButtonStyleTranslucent];
     waterfallBtn.text = @"瀑布流布局";
     waterfallBtn.font = [UIFont systemFontOfSize:14.0f];
-//    waterfallBtn.backgroundColor = [UIColor whiteColor];
     waterfallBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
-    [waterfallBtn addTarget:self action:@selector(waterfallBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [waterfallBtn addTarget:self
+                     action:@selector(waterfallBtnClicked)
+           forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:waterfallBtn];
     
     @weakify(self);
@@ -87,6 +90,12 @@
         @strongify(self);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.top.mas_equalTo(showAlertBtn.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(160, 40));
+    }];
+    [waterfallBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.top.mas_equalTo(pullToRefreshBtn.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
 }
@@ -133,7 +142,7 @@
 
 - (void)pullToRefreshBtnClicked {
     FYTableViewController *tableVC = [[FYTableViewController alloc] init];
-    [self presentViewController:tableVC animated:YES completion:nil];
+    [self presentViewController:tableVC animated:NO completion:nil];
 }
 
 - (void)waterfallBtnClicked {
