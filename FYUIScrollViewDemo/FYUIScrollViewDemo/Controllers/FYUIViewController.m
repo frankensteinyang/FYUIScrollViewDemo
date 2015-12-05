@@ -57,6 +57,14 @@
     [pullToRefreshBtn addTarget:self action:@selector(pullToRefreshBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:pullToRefreshBtn];
     
+    FYUIButton *waterfallBtn = [[FYUIButton alloc] initWithFrame:CGRectZero style:FYUIButtonStyleTranslucent];
+    waterfallBtn.text = @"瀑布流布局";
+    waterfallBtn.font = [UIFont systemFontOfSize:14.0f];
+//    waterfallBtn.backgroundColor = [UIColor whiteColor];
+    waterfallBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    [waterfallBtn addTarget:self action:@selector(waterfallBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [_effectView.contentView addSubview:waterfallBtn];
+    
     @weakify(self);
     [_effectView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
@@ -126,6 +134,10 @@
 - (void)pullToRefreshBtnClicked {
     FYTableViewController *tableVC = [[FYTableViewController alloc] init];
     [self presentViewController:tableVC animated:YES completion:nil];
+}
+
+- (void)waterfallBtnClicked {
+
 }
 
 #pragma mark - 懒加载
