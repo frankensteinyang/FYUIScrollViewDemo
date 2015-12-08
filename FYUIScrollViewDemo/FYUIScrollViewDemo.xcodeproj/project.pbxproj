@@ -17,6 +17,7 @@
 		EF969EC21C0F07B4005A4A0E /* FYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF969EC11C0F07B4005A4A0E /* FYTableViewController.m */; };
 		EFABF2821C08574A000D6AA9 /* FYConfigurationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABF2811C08574A000D6AA9 /* FYConfigurationModel.m */; };
 		EFABF2851C08726C000D6AA9 /* FYRedirectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFABF2841C08726C000D6AA9 /* FYRedirectModel.m */; };
+		EFB037231C15DFFC009ACA81 /* FYWaterfallViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB037221C15DFFC009ACA81 /* FYWaterfallViewCell.m */; };
 		EFB04EE71BFC847200E0C2D9 /* FYBannerService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */; };
 		EFB04EEA1BFC84E700E0C2D9 /* FYPublicService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB04EE91BFC84E700E0C2D9 /* FYPublicService.m */; };
 		EFBB284D1C05CD52004EF710 /* FYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBB284C1C05CD52004EF710 /* FYHelper.m */; };
@@ -71,6 +72,8 @@
 		EFABF2811C08574A000D6AA9 /* FYConfigurationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYConfigurationModel.m; sourceTree = "<group>"; };
 		EFABF2831C08726C000D6AA9 /* FYRedirectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYRedirectModel.h; sourceTree = "<group>"; };
 		EFABF2841C08726C000D6AA9 /* FYRedirectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYRedirectModel.m; sourceTree = "<group>"; };
+		EFB037211C15DFFC009ACA81 /* FYWaterfallViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWaterfallViewCell.h; sourceTree = "<group>"; };
+		EFB037221C15DFFC009ACA81 /* FYWaterfallViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWaterfallViewCell.m; sourceTree = "<group>"; };
 		EFB04EE51BFC847200E0C2D9 /* FYBannerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBannerService.h; sourceTree = "<group>"; };
 		EFB04EE61BFC847200E0C2D9 /* FYBannerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerService.m; sourceTree = "<group>"; };
 		EFB04EE81BFC84E700E0C2D9 /* FYPublicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPublicService.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 			children = (
 				EFFA9ED21C1355D5007F07C1 /* FYWaterfallView.h */,
 				EFFA9ED31C1355D5007F07C1 /* FYWaterfallView.m */,
+				EFB037211C15DFFC009ACA81 /* FYWaterfallViewCell.h */,
+				EFB037221C15DFFC009ACA81 /* FYWaterfallViewCell.m */,
 			);
 			path = FYWaterfallView;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				EF3631881C0475E000DEA179 /* FYBannerItemView.m in Sources */,
 				EFABF2821C08574A000D6AA9 /* FYConfigurationModel.m in Sources */,
 				EF969EC21C0F07B4005A4A0E /* FYTableViewController.m in Sources */,
+				EFB037231C15DFFC009ACA81 /* FYWaterfallViewCell.m in Sources */,
 				EFB04EEA1BFC84E700E0C2D9 /* FYPublicService.m in Sources */,
 				EFF0123D1BF357DF00B0F922 /* FYAlertView.m in Sources */,
 				EFFA9ED41C1355D5007F07C1 /* FYWaterfallView.m in Sources */,
