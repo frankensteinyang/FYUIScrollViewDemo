@@ -18,4 +18,8 @@
 }
 */
 
+@dynamic delegate;
+
+
+
 @end

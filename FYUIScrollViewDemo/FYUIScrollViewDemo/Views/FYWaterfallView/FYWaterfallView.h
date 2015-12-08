@@ -41,3 +41,4 @@ typedef enum {
 @property (nonatomic, weak) id<FYWaterfallViewDelegate> delegate;
 
 @end
+
