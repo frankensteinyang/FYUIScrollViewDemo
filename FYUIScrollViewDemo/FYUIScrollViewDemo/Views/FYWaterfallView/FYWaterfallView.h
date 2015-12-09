@@ -22,11 +22,13 @@ typedef enum {
 @protocol FYWaterfallViewDataSource <NSObject>
 
 @required
+
 - (NSUInteger)numberOfCellsInWaterfallView:(FYWaterfallView *)waterfallView;
 - (FYWaterfallViewCell *)waterfallView:(FYWaterfallView *)waterfallView
                            cellAtIndex:(NSUInteger)index;
 
 @optional
+
 - (NSUInteger)numberOfColumnsInWaterfallView:(FYWaterfallView *)waterfallView;
 
 @end
