@@ -63,7 +63,12 @@ typedef enum {
 - (void)reloadData;
 
 /**
- *  瀑布流cell重用
+ *  Cell的宽度
+ */
+- (CGFloat)cellWidth;
+
+/**
+ *  瀑布流Cell重用
  */
 - (__kindof FYWaterfallViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 

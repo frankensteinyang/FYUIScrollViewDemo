@@ -10,4 +10,6 @@
 
 @interface FYWaterfallViewCell : UIView
 
+@property (nonatomic, copy) NSString *identifier;
+
 @end
