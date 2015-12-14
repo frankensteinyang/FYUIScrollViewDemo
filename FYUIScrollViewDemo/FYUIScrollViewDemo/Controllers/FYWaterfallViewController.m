@@ -8,16 +8,29 @@
 
 #import "FYWaterfallViewController.h"
 #import "FYWaterfallView.h"
+#import "FYCommodityModel.h"
 
 @interface FYWaterfallViewController () <FYWaterfallViewDataSource, FYWaterfallViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *commodities;
+@property (nonatomic, weak) FYWaterfallView *waterfallView;
 
 @end
 
 @implementation FYWaterfallViewController
 
+- (NSMutableArray *)commodities {
+    if (_commodities == nil) {
+        self.commodities = [NSMutableArray array];
+    }
+    return _commodities;
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+//    NSArray *newCommodities = [FYCommodityModel object]
     FYWaterfallView *waterfallView = [[FYWaterfallView alloc] init];
     waterfallView.frame = self.view.bounds;
     waterfallView.dataSource = self;
@@ -25,7 +38,8 @@
     [self.view addSubview:waterfallView];
 }
 
-- (FYWaterfallViewCell *)waterfallView:(FYWaterfallView *)waterfallView cellAtIndex:(NSUInteger)index {
+- (FYWaterfallViewCell *)waterfallView:(FYWaterfallView *)waterfallView
+                           cellAtIndex:(NSUInteger)index {
     
     return nil;
 }

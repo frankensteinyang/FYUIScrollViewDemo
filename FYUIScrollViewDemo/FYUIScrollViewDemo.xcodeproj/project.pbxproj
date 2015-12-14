@@ -13,6 +13,8 @@
 		EF3631851C03057600DEA179 /* FYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3631841C03057600DEA179 /* FYWebViewController.m */; };
 		EF3631881C0475E000DEA179 /* FYBannerItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3631871C0475E000DEA179 /* FYBannerItemView.m */; };
 		EF36318E1C047FDE00DEA179 /* FYImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF36318D1C047FDE00DEA179 /* FYImageDataModel.m */; };
+		EF4321471C1EC55D002CBD86 /* NSObject+FYKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4321461C1EC55D002CBD86 /* NSObject+FYKeyValue.m */; };
+		EF43214A1C1ED6B8002CBD86 /* NSObject+FYEnumerater.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4321491C1ED6B8002CBD86 /* NSObject+FYEnumerater.m */; };
 		EF4FDC2E1C1A77F4003B8418 /* FYWaterfallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4FDC2D1C1A77F4003B8418 /* FYWaterfallViewController.m */; };
 		EF7AF84B1C07114800BDCCC1 /* FYStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7AF84A1C07114800BDCCC1 /* FYStore.m */; };
 		EF969EC21C0F07B4005A4A0E /* FYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF969EC11C0F07B4005A4A0E /* FYTableViewController.m */; };
@@ -68,6 +70,10 @@
 		EF3631871C0475E000DEA179 /* FYBannerItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBannerItemView.m; sourceTree = "<group>"; };
 		EF36318C1C047FDE00DEA179 /* FYImageDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYImageDataModel.h; sourceTree = "<group>"; };
 		EF36318D1C047FDE00DEA179 /* FYImageDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYImageDataModel.m; sourceTree = "<group>"; };
+		EF4321451C1EC55D002CBD86 /* NSObject+FYKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FYKeyValue.h"; sourceTree = "<group>"; };
+		EF4321461C1EC55D002CBD86 /* NSObject+FYKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FYKeyValue.m"; sourceTree = "<group>"; };
+		EF4321481C1ED6B8002CBD86 /* NSObject+FYEnumerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FYEnumerater.h"; sourceTree = "<group>"; };
+		EF4321491C1ED6B8002CBD86 /* NSObject+FYEnumerater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FYEnumerater.m"; sourceTree = "<group>"; };
 		EF4FDC2C1C1A77F4003B8418 /* FYWaterfallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWaterfallViewController.h; sourceTree = "<group>"; };
 		EF4FDC2D1C1A77F4003B8418 /* FYWaterfallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWaterfallViewController.m; sourceTree = "<group>"; };
 		EF7AF8491C07114800BDCCC1 /* FYStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYStore.h; sourceTree = "<group>"; };
@@ -247,6 +253,10 @@
 			children = (
 				EFBB284B1C05CD52004EF710 /* FYHelper.h */,
 				EFBB284C1C05CD52004EF710 /* FYHelper.m */,
+				EF4321451C1EC55D002CBD86 /* NSObject+FYKeyValue.h */,
+				EF4321461C1EC55D002CBD86 /* NSObject+FYKeyValue.m */,
+				EF4321481C1ED6B8002CBD86 /* NSObject+FYEnumerater.h */,
+				EF4321491C1ED6B8002CBD86 /* NSObject+FYEnumerater.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -568,11 +578,13 @@
 				EF969EC21C0F07B4005A4A0E /* FYTableViewController.m in Sources */,
 				EF4FDC2E1C1A77F4003B8418 /* FYWaterfallViewController.m in Sources */,
 				EFB037231C15DFFC009ACA81 /* FYWaterfallViewCell.m in Sources */,
+				EF4321471C1EC55D002CBD86 /* NSObject+FYKeyValue.m in Sources */,
 				EFB04EEA1BFC84E700E0C2D9 /* FYPublicService.m in Sources */,
 				EFF0123D1BF357DF00B0F922 /* FYAlertView.m in Sources */,
 				EFFA9ED41C1355D5007F07C1 /* FYWaterfallView.m in Sources */,
 				EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */,
 				EFABF2851C08726C000D6AA9 /* FYRedirectModel.m in Sources */,
+				EF43214A1C1ED6B8002CBD86 /* NSObject+FYEnumerater.m in Sources */,
 				EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */,
 				EFB04EE71BFC847200E0C2D9 /* FYBannerService.m in Sources */,
 				EF36318E1C047FDE00DEA179 /* FYImageDataModel.m in Sources */,
