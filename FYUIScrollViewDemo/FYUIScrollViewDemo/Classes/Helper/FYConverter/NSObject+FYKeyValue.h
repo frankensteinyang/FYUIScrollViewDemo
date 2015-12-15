@@ -8,12 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (FYKeyValue)
+@protocol FYKeyValue <NSObject>
+
+@optional
+
+- (NSDictionary *)replacedKeyFromPropertyName;
+- (NSDictionary *)objectClassInArray;
+- (void)objectDidFinishConvertingToKeyValues;
+
+@end
+
+@interface NSObject (FYKeyValue) <FYKeyValue>
 
 + (NSArray *)objectArrayWithFilename:(NSString *)filename;
 + (NSArray *)objectArrayWithFile:(NSString *)file;
 + (NSArray *)objectArrayWithKeyValuesArray:(NSArray *)keyValuesArray;
 + (instancetype)objectWithKeyValues:(NSDictionary *)keyValues;
 - (void)setKeyValues:(NSDictionary *)keyValues;
+- (NSDictionary *)keyValues;
++ (NSArray *)keyValuesArrayWithObjectArray:(NSArray *)objectArray;
 
 @end

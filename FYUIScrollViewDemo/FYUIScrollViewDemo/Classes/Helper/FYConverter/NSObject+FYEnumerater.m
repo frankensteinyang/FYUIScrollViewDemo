@@ -10,4 +10,7 @@
 
 @implementation NSObject (FYEnumerater)
 
+- (void)enumerateIvarsWithBlock:(FYIvarsBlock)block {
+}
+
 @end

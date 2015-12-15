@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "FYIvar.h"
+
+typedef void (^FYClassesBlock)(Class c, BOOL *stop);
+
 @interface NSObject (FYEnumerater)
+
+- (void)enumerateIvarsWithBlock:(FYIvarsBlock)block;
 
 @end
