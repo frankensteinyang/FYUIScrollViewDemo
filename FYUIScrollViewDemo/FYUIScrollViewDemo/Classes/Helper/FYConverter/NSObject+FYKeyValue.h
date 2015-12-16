@@ -15,6 +15,7 @@
 - (NSDictionary *)replacedKeyFromPropertyName;
 - (NSDictionary *)objectClassInArray;
 - (void)objectDidFinishConvertingToKeyValues;
+- (void)keyValuesDidFinishConvertingToObject;
 
 @end
 

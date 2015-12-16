@@ -14,6 +14,7 @@ typedef void (^FYClassesBlock)(Class c, BOOL *stop);
 
 @interface NSObject (FYEnumerater)
 
+// 遍历所有属性
 - (void)enumerateIvarsWithBlock:(FYIvarsBlock)block;
 
 @end

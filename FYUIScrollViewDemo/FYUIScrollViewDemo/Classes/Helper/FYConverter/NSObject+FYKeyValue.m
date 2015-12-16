@@ -33,18 +33,25 @@
     NSMutableArray *modelArray = [NSMutableArray array];
     for (NSDictionary *keyValues in keyValuesArray) {
         if (![keyValues isKindOfClass:[NSDictionary class]]) continue;
-//        id model = [self ]
-        
+        id model = [self objectWithKeyValues:keyValues];
+        [modelArray addObject:model];
     }
     return modelArray;
 }
 
+/**
+ *  通过字典创建模型
+ *
+ *  @param keyValues 字典
+ *
+ *  @return 创建的模型
+ */
 + (instancetype)objectWithKeyValues:(NSDictionary *)keyValues {
     NSString *desc = [NSString stringWithFormat:@"keyValues is a %@",
                       keyValues.class];
     FYAssert([keyValues isKindOfClass:[NSDictionary class]], desc);
     id model = [[self alloc] init];
-//    [model setkeyval]
+    [model setKeyValues:keyValues];
     return model;
 }
 
@@ -52,7 +59,28 @@
     NSString *desc = [NSString stringWithFormat:@"keyValues is a %@",
                       keyValues.class];
     FYAssert([keyValues isKindOfClass:[NSDictionary class]], desc);
-//    [self e]
+    [self enumerateIvarsWithBlock:^(FYIvar *ivar, BOOL *stop) {
+        if (ivar.isSrcClassFromFoundation) {
+            return;
+        }
+        NSString *key = [self keyWithPropertyName:ivar.propertyName];
+        id value = keyValues[key];
+        if (!value || [value isKindOfClass:[NSNull class]]) {
+            return;
+        }
+        if (ivar.type.typeClass && !ivar.type.isFromFoundation) {
+            value = [ivar.type.typeClass objectWithKeyValues:value];
+        } else if ([self respondsToSelector:@selector(objectClassInArray)]) {
+            Class objectClass = self.objectClassInArray[ivar.propertyName];
+            if (objectClass) {
+                value = [objectClass objectArrayWithKeyValuesArray:value];
+            }
+        }
+        ivar.value = value;
+    }];
+    if ([self respondsToSelector:@selector(keyValuesDidFinishConvertingToObject)]) {
+        [self keyValuesDidFinishConvertingToObject];
+    }
 }
 
 - (NSDictionary *)keyValues {
