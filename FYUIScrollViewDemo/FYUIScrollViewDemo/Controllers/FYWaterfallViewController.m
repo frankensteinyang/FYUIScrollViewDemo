@@ -46,6 +46,8 @@
     self.waterfallView = waterfallView;
 }
 
+#pragma mark - FYWaterfallViewDataSource
+
 - (NSUInteger)numberOfCellsInWaterfallView:(FYWaterfallView *)waterfallView {
     return [self.commodities count];
 }
@@ -67,7 +69,8 @@
 
 #pragma mark - FYWaterfallViewDelegate
 
-- (CGFloat)waterfallView:(FYWaterfallView *)waterfallView heightAtIndex:(NSUInteger)index {
+- (CGFloat)waterfallView:(FYWaterfallView *)waterfallView
+           heightAtIndex:(NSUInteger)index {
     FYCommodityModel *model = self.commodities[index];
     return waterfallView.cellWidth * model.height / model.width;
 }

@@ -17,4 +17,6 @@ typedef void (^FYClassesBlock)(Class c, BOOL *stop);
 // 遍历所有属性
 - (void)enumerateIvarsWithBlock:(FYIvarsBlock)block;
 
+- (void)enumerateClassesWithBlock:(FYClassesBlock)block;
+
 @end
