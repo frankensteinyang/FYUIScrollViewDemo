@@ -200,7 +200,9 @@
 
 #pragma mark - Event Handlers
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet<UITouch *> *)touches
+           withEvent:(UIEvent *)event {
+    
     if (![self.delegate respondsToSelector:@selector(waterfallView:didSelectAtIndex:)]) {
         return;
     }
