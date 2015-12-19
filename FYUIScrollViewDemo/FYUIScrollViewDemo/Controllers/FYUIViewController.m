@@ -73,6 +73,9 @@
     gridBtn.text = @"九宫格";
     gridBtn.font = [UIFont systemFontOfSize:14.0f];
     gridBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    [gridBtn addTarget:self
+                action:@selector(gridBtnClicked)
+      forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:gridBtn];
     
     @weakify(self);
@@ -103,6 +106,12 @@
         @strongify(self);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.top.mas_equalTo(pullToRefreshBtn.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(160, 40));
+    }];
+    [gridBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.top.mas_equalTo(waterfallBtn.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
 }
@@ -155,6 +164,10 @@
 - (void)waterfallBtnClicked {
     FYWaterfallViewController *waterfallVC = [[FYWaterfallViewController alloc] init];
     [self presentViewController:waterfallVC animated:NO completion:nil];
+}
+
+- (void)gridBtnClicked {
+    // code goes here...
 }
 
 #pragma mark - 懒加载
