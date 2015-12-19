@@ -69,6 +69,12 @@
            forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:waterfallBtn];
     
+    FYUIButton *gridBtn = [[FYUIButton alloc] initWithFrame:CGRectZero style:FYUIButtonStyleTranslucent];
+    gridBtn.text = @"九宫格";
+    gridBtn.font = [UIFont systemFontOfSize:14.0f];
+    gridBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    [_effectView.contentView addSubview:gridBtn];
+    
     @weakify(self);
     [_effectView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
