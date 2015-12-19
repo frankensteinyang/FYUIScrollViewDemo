@@ -16,6 +16,7 @@
 #import "FYDefine.h"
 #import "FYWebViewController.h"
 #import "FYTableViewController.h"
+#import "FYWaterfallViewController.h"
 
 @interface FYUIViewController ()
 
@@ -146,7 +147,8 @@
 }
 
 - (void)waterfallBtnClicked {
-
+    FYWaterfallViewController *waterfallVC = [[FYWaterfallViewController alloc] init];
+    [self presentViewController:waterfallVC animated:NO completion:nil];
 }
 
 #pragma mark - 懒加载

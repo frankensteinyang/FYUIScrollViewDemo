@@ -35,7 +35,7 @@
     backBtn.backgroundColor = [UIColor whiteColor];
     backBtn.vibrancyEffect = nil;
     [backBtn addTarget:self
-                action:@selector(goToHomepageBtnClicked)
+                action:@selector(backBtnClicked)
       forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:backBtn];
@@ -127,7 +127,7 @@
     return _data;
 }
 
-- (void)goToHomepageBtnClicked {
+- (void)backBtnClicked {
     [self dismissViewControllerAnimated:NO
                              completion:nil];
 }

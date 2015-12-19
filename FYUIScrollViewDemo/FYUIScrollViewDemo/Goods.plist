@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>height</key>
+		<integer>240</integer>
+		<key>img</key>
+		<string>http://a.vpimg4.com/upload/merchandise/vis/11/20020214-2/67/1428503-7.jpg</string>
+		<key>price</key>
+		<string>￥210</string>
+		<key>width</key>
+		<integer>200</integer>
+	</dict>
+	<dict>
+		<key>height</key>
+		<integer>300</integer>
+		<key>img</key>
+		<string>http://a.vpimg3.com/upload/merchandise/vis/11/20020214-2/133/1428708-7.jpg</string>
+		<key>price</key>
+		<string>￥560</string>
+		<key>width</key>
+		<integer>200</integer>
+	</dict>
+	<dict>
+		<key>height</key>
+		<integer>275</integer>
+		<key>img</key>
+		<string>http://a.vpimg4.com/upload/merchandise/292456/YLGW-181202702-001-7.jpg</string>
+		<key>price</key>
+		<string>￥980</string>
+		<key>width</key>
+		<integer>200</integer>
+	</dict>
+</array>
+</plist>
