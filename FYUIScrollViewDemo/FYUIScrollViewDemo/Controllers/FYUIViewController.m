@@ -17,6 +17,7 @@
 #import "FYWebViewController.h"
 #import "FYTableViewController.h"
 #import "FYWaterfallViewController.h"
+#import "FYGridViewController.h"
 
 @interface FYUIViewController ()
 
@@ -167,7 +168,8 @@
 }
 
 - (void)gridBtnClicked {
-    // code goes here...
+    FYGridViewController *gridVC = [[FYGridViewController alloc] init];
+    [self presentViewController:gridVC animated:NO completion:nil];
 }
 
 #pragma mark - 懒加载

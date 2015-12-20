@@ -32,6 +32,8 @@
 		EFC9ADE21C20035D008942CF /* FYIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC9ADE11C20035D008942CF /* FYIvar.m */; };
 		EFC9ADE51C20042F008942CF /* FYType.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC9ADE41C20042F008942CF /* FYType.m */; };
 		EFC9ADE81C2007ED008942CF /* FYTypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC9ADE71C2007ED008942CF /* FYTypeEncoding.m */; };
+		EFDFD1EF1C2705E100524842 /* FYGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDFD1EE1C2705E100524842 /* FYGridViewController.m */; };
+		EFDFD1F31C2706CF00524842 /* FYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDFD1F21C2706CF00524842 /* FYGridView.m */; };
 		EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012211BF33D5100B0F922 /* FYAppDelegate.m */; };
 		EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012331BF3560100B0F922 /* FYUIViewController.m */; };
 		EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012391BF357AA00B0F922 /* FYUIButton.m */; };
@@ -113,6 +115,10 @@
 		EFC9ADE41C20042F008942CF /* FYType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYType.m; sourceTree = "<group>"; };
 		EFC9ADE61C2007ED008942CF /* FYTypeEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTypeEncoding.h; sourceTree = "<group>"; };
 		EFC9ADE71C2007ED008942CF /* FYTypeEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTypeEncoding.m; sourceTree = "<group>"; };
+		EFDFD1ED1C2705E100524842 /* FYGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGridViewController.h; sourceTree = "<group>"; };
+		EFDFD1EE1C2705E100524842 /* FYGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGridViewController.m; sourceTree = "<group>"; };
+		EFDFD1F11C2706CF00524842 /* FYGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGridView.h; sourceTree = "<group>"; };
+		EFDFD1F21C2706CF00524842 /* FYGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGridView.m; sourceTree = "<group>"; };
 		EFF012201BF33D5100B0F922 /* FYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYAppDelegate.h; path = ../FYAppDelegate.h; sourceTree = "<group>"; };
 		EFF012211BF33D5100B0F922 /* FYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYAppDelegate.m; path = ../FYAppDelegate.m; sourceTree = "<group>"; };
 		EFF012321BF3560100B0F922 /* FYUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUIViewController.h; sourceTree = "<group>"; };
@@ -296,6 +302,15 @@
 			path = FYConverter;
 			sourceTree = "<group>";
 		};
+		EFDFD1F01C27069300524842 /* FYGridView */ = {
+			isa = PBXGroup;
+			children = (
+				EFDFD1F11C2706CF00524842 /* FYGridView.h */,
+				EFDFD1F21C2706CF00524842 /* FYGridView.m */,
+			);
+			path = FYGridView;
+			sourceTree = "<group>";
+		};
 		EFF012311BF3560100B0F922 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +322,8 @@
 				EF969EC11C0F07B4005A4A0E /* FYTableViewController.m */,
 				EF4FDC2C1C1A77F4003B8418 /* FYWaterfallViewController.h */,
 				EF4FDC2D1C1A77F4003B8418 /* FYWaterfallViewController.m */,
+				EFDFD1ED1C2705E100524842 /* FYGridViewController.h */,
+				EFDFD1EE1C2705E100524842 /* FYGridViewController.m */,
 			);
 			name = Controllers;
 			path = ../Controllers;
@@ -315,6 +332,7 @@
 		EFF012351BF3566500B0F922 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EFDFD1F01C27069300524842 /* FYGridView */,
 				EFFA9ED11C1355D5007F07C1 /* FYWaterfallView */,
 				EF0F6FBF1BFB499000A79C76 /* FYBannerView */,
 				EFF012371BF3575E00B0F922 /* FYUIButton */,
@@ -605,11 +623,13 @@
 				EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */,
 				EFC9ADE81C2007ED008942CF /* FYTypeEncoding.m in Sources */,
 				EF3631851C03057600DEA179 /* FYWebViewController.m in Sources */,
+				EFDFD1F31C2706CF00524842 /* FYGridView.m in Sources */,
 				EF28525D1C11786E00FA954F /* FYPullToRefreshModel.m in Sources */,
 				EFB6D9801C1AC2F4000D991F /* FYCommodityModel.m in Sources */,
 				EFB6D9831C1AC435000D991F /* FYCommodityCell.m in Sources */,
 				EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */,
 				EFC9ADE21C20035D008942CF /* FYIvar.m in Sources */,
+				EFDFD1EF1C2705E100524842 /* FYGridViewController.m in Sources */,
 				EFC9ADDE1C1FF99F008942CF /* FYFoundation.m in Sources */,
 				EFF5C4F01BF32BE600B6A52D /* main.m in Sources */,
 				EF3631881C0475E000DEA179 /* FYBannerItemView.m in Sources */,
