@@ -8,6 +8,7 @@
 
 #import <Masonry/Masonry.h>
 #import <libextobjc/EXTScope.h>
+#import <MJRefresh/MJRefresh.h>
 
 #import "FYWaterfallViewController.h"
 #import "FYWaterfallView.h"
@@ -56,6 +57,7 @@
     waterfallView.dataSource = self;
     waterfallView.delegate = self;
     [self.view addSubview:waterfallView];
+    self.waterfallView = waterfallView;
     
     @weakify(self);
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -73,7 +75,8 @@
         make.size.mas_equalTo(CGSizeMake(width, height));
     }];
     
-    self.waterfallView = waterfallView;
+    // 下拉刷新和上拉加载更多
+//    [waterfallView addH]
 }
 
 #pragma mark - FYWaterfallViewDataSource

@@ -70,7 +70,8 @@ typedef enum {
 /**
  *  瀑布流Cell重用
  */
-- (__kindof FYWaterfallViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
+- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier;
+// __kindof FYWaterfallViewCell *
 
 @end
 

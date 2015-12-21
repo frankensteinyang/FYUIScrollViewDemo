@@ -31,7 +31,7 @@
 }
 */
 
-@dynamic delegate;
+//@dynamic delegate;
 
 - (NSMutableArray *)cellFrames {
     if (_cellFrames == nil) {
@@ -146,7 +146,7 @@
     }
 }
 
-- (FYWaterfallViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier {
+- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier {
     __block FYWaterfallViewCell *reusableCell = nil;
     [self.reusableCells enumerateObjectsUsingBlock:^(FYWaterfallViewCell *cell,
                                                      BOOL * _Nonnull stop) {
