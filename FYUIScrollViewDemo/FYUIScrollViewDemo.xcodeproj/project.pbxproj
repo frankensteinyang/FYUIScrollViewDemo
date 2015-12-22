@@ -34,6 +34,7 @@
 		EFC9ADE81C2007ED008942CF /* FYTypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC9ADE71C2007ED008942CF /* FYTypeEncoding.m */; };
 		EFDFD1EF1C2705E100524842 /* FYGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDFD1EE1C2705E100524842 /* FYGridViewController.m */; };
 		EFDFD1F31C2706CF00524842 /* FYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDFD1F21C2706CF00524842 /* FYGridView.m */; };
+		EFEBE4671C29A918004A7BE9 /* FYGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEBE4661C29A918004A7BE9 /* FYGridViewCell.m */; };
 		EFF012221BF33D5100B0F922 /* FYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012211BF33D5100B0F922 /* FYAppDelegate.m */; };
 		EFF012341BF3560100B0F922 /* FYUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012331BF3560100B0F922 /* FYUIViewController.m */; };
 		EFF0123A1BF357AA00B0F922 /* FYUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF012391BF357AA00B0F922 /* FYUIButton.m */; };
@@ -119,6 +120,8 @@
 		EFDFD1EE1C2705E100524842 /* FYGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGridViewController.m; sourceTree = "<group>"; };
 		EFDFD1F11C2706CF00524842 /* FYGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGridView.h; sourceTree = "<group>"; };
 		EFDFD1F21C2706CF00524842 /* FYGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGridView.m; sourceTree = "<group>"; };
+		EFEBE4651C29A918004A7BE9 /* FYGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGridViewCell.h; sourceTree = "<group>"; };
+		EFEBE4661C29A918004A7BE9 /* FYGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGridViewCell.m; sourceTree = "<group>"; };
 		EFF012201BF33D5100B0F922 /* FYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYAppDelegate.h; path = ../FYAppDelegate.h; sourceTree = "<group>"; };
 		EFF012211BF33D5100B0F922 /* FYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYAppDelegate.m; path = ../FYAppDelegate.m; sourceTree = "<group>"; };
 		EFF012321BF3560100B0F922 /* FYUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUIViewController.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 			children = (
 				EFDFD1F11C2706CF00524842 /* FYGridView.h */,
 				EFDFD1F21C2706CF00524842 /* FYGridView.m */,
+				EFEBE4651C29A918004A7BE9 /* FYGridViewCell.h */,
+				EFEBE4661C29A918004A7BE9 /* FYGridViewCell.m */,
 			);
 			path = FYGridView;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 				EFB6D9801C1AC2F4000D991F /* FYCommodityModel.m in Sources */,
 				EFB6D9831C1AC435000D991F /* FYCommodityCell.m in Sources */,
 				EF0F6FC21BFB4A3300A79C76 /* FYBannerView.m in Sources */,
+				EFEBE4671C29A918004A7BE9 /* FYGridViewCell.m in Sources */,
 				EFC9ADE21C20035D008942CF /* FYIvar.m in Sources */,
 				EFDFD1EF1C2705E100524842 /* FYGridViewController.m in Sources */,
 				EFC9ADDE1C1FF99F008942CF /* FYFoundation.m in Sources */,
