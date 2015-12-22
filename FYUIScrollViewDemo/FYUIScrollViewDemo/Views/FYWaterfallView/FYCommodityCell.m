@@ -62,4 +62,14 @@
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:commodity.img] placeholderImage:[UIImage imageNamed:@"Loading"]];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.imageView.frame = self.bounds;
+    CGFloat priceX = 0;
+    CGFloat priceH = 25;
+    CGFloat priceY = self.bounds.size.height - priceH;
+    CGFloat priceW = self.bounds.size.width;
+    self.priceLabel.frame = CGRectMake(priceX, priceY, priceW, priceH);
+}
+
 @end
