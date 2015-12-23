@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FYGridViewCell.h"
+
 typedef enum {
     FYGridViewStylePush = 0,
     FYGridViewStyleSwap
@@ -37,5 +39,30 @@ typedef enum {
 @property (nonatomic) BOOL showsVerticalScrollIndicator;
 @property (nonatomic) BOOL showsHorizontalScrollIndicator;
 @property (nonatomic, readonly) UIScrollView *scrollView;
+
+- (FYGridViewCell *)dequeueReusableCell;
+
+- (FYGridViewCell *)cellForItemAtIndex:(NSInteger)position;
+
+- (void)reloadData;
+- (void)insertObjectAtIndex:(NSInteger)index;
+- (void)removeObjectAtIndex:(NSInteger)index;
+- (void)reloadObjectAtIndex:(NSInteger)index;
+- (void)swapObjectAtIndex:(NSInteger)index
+          toObjectAtIndex:(NSInteger)targetObjIndex;
+- (void)scrollToObjectAtIndex:(NSInteger)index animated:(BOOL)animated;
+
+@end
+
+@protocol FYGridViewDataSource <NSObject>
+
+@required
+- (NSInteger)numberOfItemsInGridView:(FYGridView *)gridView;
+- (CGSize)sizeForItemsInGridView:(FYGridView *)gridView;
+- (FYGridViewCell *)gridView:(FYGridView *)gridView
+          cellForItemAtIndex:(NSInteger)index;
+
+@optional
+- (void)gridView:(FYGridView *)gridView deleteItemAtIndex:(NSInteger)index;
 
 @end
