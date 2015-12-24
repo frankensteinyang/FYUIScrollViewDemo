@@ -15,10 +15,9 @@
 }
 
 @property (nonatomic, assign) Class srcClass;
-
 @property (nonatomic,
            readonly,
-           getter = isSrcClassFromFoundation) BOOL srcClassFromFoundation;
+           getter=isSrcClassFromFoundation) BOOL srcClassFromFoundation;
 @property (nonatomic, weak, readonly) id srcObject;
 @property (nonatomic, copy, readonly) NSString *name;
 
