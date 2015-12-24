@@ -31,8 +31,6 @@
 }
 */
 
-//@dynamic delegate;
-
 - (NSMutableArray *)cellFrames {
     if (_cellFrames == nil) {
         self.cellFrames = [NSMutableArray array];
@@ -213,11 +211,14 @@
     [self.displayingCells enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key,
                                                               FYWaterfallViewCell * _Nonnull cell,
                                                               BOOL * _Nonnull stop) {
+        
         if (CGRectContainsPoint(cell.frame, point)) {
             selectedIndex = key;
             *stop = YES;
         }
+        
     }];
+    
     if (selectedIndex) {
         [self.delegate waterfallView:self
                     didSelectAtIndex:selectedIndex.unsignedIntegerValue];

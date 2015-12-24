@@ -12,8 +12,8 @@
 
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, assign, readonly) Class typeClass;
-@property (nonatomic, readonly, getter = isFromFoundation) BOOL fromFoundation;
-@property (nonatomic, readonly, getter = isKVCDisabled) BOOL kvcDisabled;
+@property (nonatomic, readonly, getter=isFromFoundation) BOOL fromFoundation;
+@property (nonatomic, readonly, getter=isKVCDisabled) BOOL kvcDisabled;
 
 - (instancetype)initWithCode:(NSString *)code;
 

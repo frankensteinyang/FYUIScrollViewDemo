@@ -76,7 +76,36 @@
     }];
     
     // 下拉刷新和上拉加载更多
-//    [waterfallView addH]
+    waterfallView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self
+                                                         refreshingAction:@selector(pullToRefresh)];
+    waterfallView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self
+                                                         refreshingAction:@selector(loadMore)];
+}
+
+- (void)pullToRefresh {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSArray *refresh = [FYCommodityModel objectArrayWithFilename:@""];
+        [self.commodities insertObjects:refresh
+                              atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [refresh count])]];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.waterfallView reloadData];
+        [self.waterfallView.mj_header endRefreshing];
+    });
+}
+
+- (void)loadMore {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSArray *loadMore = [FYCommodityModel objectArrayWithFilename:@""];
+        [self.commodities addObjectsFromArray:loadMore];
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.waterfallView reloadData];
+        [self.waterfallView.mj_footer endRefreshing];
+    });
 }
 
 #pragma mark - FYWaterfallViewDataSource
