@@ -66,3 +66,44 @@ typedef enum {
 - (void)gridView:(FYGridView *)gridView deleteItemAtIndex:(NSInteger)index;
 
 @end
+
+@protocol FYGridViewActionDelegate <NSObject>
+
+@required
+- (void)gridView:(FYGridView *)gridView didTapOnItemAtIndex:(NSInteger)position;
+
+@end
+
+@protocol FYGridViewSortingDelegate <NSObject>
+
+@required
+- (void)gridView:(FYGridView *)gridView
+ moveItemAtIndex:(NSInteger)oldIndex
+         toIndex:(NSInteger)targetIndex;
+
+- (void)gridView:(FYGridView *)gridView exchangeItemAtIndex:(NSInteger)index
+   toItemAtIndex:(NSInteger)targetIndex;
+
+@optional
+- (void)gridView:(FYGridView *)gridView didStartMovingCell:(FYGridViewCell *)cell;
+- (void)gridView:(FYGridView *)gridView didEndMovingCell:(FYGridViewCell *)cell;
+- (BOOL)gridView:(FYGridView *)gridView shouldAllowShakingBehaviorWhenMovingCell:(FYGridViewCell *)cell
+         atIndex:(NSInteger)index;
+
+@end
+
+@protocol FYGridViewTransformationDelegate <NSObject>
+
+@required
+- (CGSize)gridView:(FYGridView *)gridView sizeInFullSizeForCell:(FYGridViewCell *)cell
+           atIndex:(NSInteger)index;
+- (UIView *)gridView:(FYGridView *)gridView fullSizeViewForCell:(FYGridViewCell *)cell
+             atIndex:(NSInteger)index;
+
+@optional
+- (void)gridView:(FYGridView *)gridView didStartTransformingCell:(FYGridViewCell *)cell;
+- (void)gridView:(FYGridView *)gridView didEnterFullSizeForCell:(FYGridViewCell *)cell;
+- (void)gridView:(FYGridView *)gridView didEndTransformingCell:(FYGridViewCell *)cell;
+
+@end
+
