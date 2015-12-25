@@ -18,4 +18,38 @@
 }
 */
 
+- (FYGridViewCell *)dequeueReusableCell {
+
+    return nil;
+}
+
+- (FYGridViewCell *)cellForItemAtIndex:(NSInteger)position {
+
+    return nil;
+}
+
+- (void)reloadData {
+
+}
+
+- (void)insertObjectAtIndex:(NSInteger)index {
+
+}
+
+- (void)removeObjectAtIndex:(NSInteger)index {
+
+}
+
+- (void)reloadObjectAtIndex:(NSInteger)index {
+
+}
+
+- (void)swapObjectAtIndex:(NSInteger)index toObjectAtIndex:(NSInteger)targetObjIndex {
+    
+}
+
+- (void)scrollToObjectAtIndex:(NSInteger)index animated:(BOOL)animated {
+
+}
+
 @end
