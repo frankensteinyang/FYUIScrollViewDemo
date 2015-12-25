@@ -15,7 +15,7 @@
 @interface FYCommodityCell ()
 
 @property (weak, nonatomic) UIImageView *imageView;
-@property (weak, nonatomic) UILabel *priceLabel;
+@property (weak, nonatomic) UILabel     *priceLabel;
 
 @end
 
@@ -59,7 +59,9 @@
 - (void)setCommodity:(FYCommodityModel *)commodity {
     _commodity = commodity;
     self.priceLabel.text = commodity.price;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:commodity.img] placeholderImage:[UIImage imageNamed:@"Loading"]];
+    NSURL *url = [NSURL URLWithString:commodity.img];
+    UIImage *img = [UIImage imageNamed:@"Loading"];
+    [self.imageView sd_setImageWithURL:url placeholderImage:img];
 }
 
 - (void)layoutSubviews {
