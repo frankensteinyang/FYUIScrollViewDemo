@@ -17,7 +17,8 @@
 #import "FYCommodityCell.h"
 #import "FYUIButton.h"
 
-@interface FYWaterfallViewController () <FYWaterfallViewDataSource, FYWaterfallViewDelegate>
+@interface FYWaterfallViewController () <FYWaterfallViewDataSource,
+                                         FYWaterfallViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *commodities;
 @property (nonatomic, weak) FYWaterfallView *waterfallView;
@@ -37,8 +38,8 @@
     
     [super viewDidLoad];
     
-    NSArray *newCommodities = [FYCommodityModel objectArrayWithFilename:@"Goods.plist"];
-    [self.commodities addObjectsFromArray:newCommodities];
+    NSArray *coms = [FYCommodityModel objectArrayWithFilename:@"Goods.plist"];
+    [self.commodities addObjectsFromArray:coms];
     
     FYUIButton *backBtn = [[FYUIButton alloc] initWithFrame:CGRectZero
                                                       style:FYUIButtonStyleTranslucent];
@@ -53,7 +54,8 @@
     FYWaterfallView *waterfallView = [[FYWaterfallView alloc] init];
     waterfallView.backgroundColor = [UIColor blueColor];
     // 随着父控件的大小自动伸缩
-    waterfallView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    waterfallView.autoresizingMask = UIViewAutoresizingFlexibleHeight |
+                                     UIViewAutoresizingFlexibleWidth;
     waterfallView.dataSource = self;
     waterfallView.delegate = self;
     [self.view addSubview:waterfallView];
@@ -85,12 +87,16 @@
 - (void)pullToRefresh {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSArray *refresh = [FYCommodityModel objectArrayWithFilename:@""];
+        NSArray *refresh = [FYCommodityModel objectArrayWithFilename:@"Goods.plist"];
+        NSRange range = NSMakeRange(0, [refresh count]);
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
         [self.commodities insertObjects:refresh
-                              atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [refresh count])]];
+                              atIndexes:indexSet];
     });
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    int64_t delta = (int64_t)(2.0 * NSEC_PER_SEC);
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delta);
+    dispatch_after(time, dispatch_get_main_queue(), ^{
         [self.waterfallView reloadData];
         [self.waterfallView.mj_header endRefreshing];
     });
@@ -99,10 +105,13 @@
 - (void)loadMore {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSArray *loadMore = [FYCommodityModel objectArrayWithFilename:@""];
+        NSArray *loadMore = [FYCommodityModel objectArrayWithFilename:@"Goods.plist"];
         [self.commodities addObjectsFromArray:loadMore];
     });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    int64_t delta = (int64_t)(2.0 * NSEC_PER_SEC);
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, delta);
+    dispatch_after(time, dispatch_get_main_queue(), ^{
         [self.waterfallView reloadData];
         [self.waterfallView.mj_footer endRefreshing];
     });

@@ -27,7 +27,9 @@
     backBtn.text = @"返回";
     backBtn.font = [UIFont systemFontOfSize:14.0f];
     backBtn.vibrancyEffect = nil;
-    [backBtn addTarget:self action:@selector(backBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn addTarget:self
+                action:@selector(backBtnClicked)
+      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     
     @weakify(self);
