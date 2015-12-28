@@ -18,6 +18,7 @@
 #import "FYTableViewController.h"
 #import "FYWaterfallViewController.h"
 #import "FYGridViewController.h"
+#import "FYMedicalRecordViewController.h"
 
 @interface FYUIViewController ()
 
@@ -79,6 +80,13 @@
       forControlEvents:UIControlEventTouchUpInside];
     [_effectView.contentView addSubview:gridBtn];
     
+    FYUIButton *medicalRecordBtn = [[FYUIButton alloc] initWithFrame:CGRectZero style:FYUIButtonStyleTranslucent];
+    medicalRecordBtn.text = @"病历记录";
+    medicalRecordBtn.font = [UIFont systemFontOfSize:14.0f];
+    medicalRecordBtn.vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    [medicalRecordBtn addTarget:self action:@selector(medicalRecordBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [_effectView.contentView addSubview:medicalRecordBtn];
+    
     @weakify(self);
     [_effectView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
@@ -113,6 +121,12 @@
         @strongify(self);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.top.mas_equalTo(waterfallBtn.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(160, 40));
+    }];
+    [medicalRecordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.top.mas_equalTo(gridBtn.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(160, 40));
     }];
 }
@@ -170,6 +184,11 @@
 - (void)gridBtnClicked {
     FYGridViewController *gridVC = [[FYGridViewController alloc] init];
     [self presentViewController:gridVC animated:NO completion:nil];
+}
+
+- (void)medicalRecordBtnClicked {
+    FYMedicalRecordViewController *medicalRecordVC = [[FYMedicalRecordViewController alloc] init];
+    [self presentViewController:medicalRecordVC animated:NO completion:nil];
 }
 
 #pragma mark - 懒加载
