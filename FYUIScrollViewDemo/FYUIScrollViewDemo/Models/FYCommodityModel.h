@@ -11,9 +11,9 @@
 
 @interface FYCommodityModel : NSObject
 
-@property (nonatomic, assign) CGFloat width;
-@property (nonatomic, assign) CGFloat height;
-@property (nonatomic, copy) NSString *img;
-@property (nonatomic, copy) NSString *price;
+@property (nonatomic, assign) CGFloat  width;
+@property (nonatomic, assign) CGFloat  height;
+@property (nonatomic, copy  ) NSString *img;
+@property (nonatomic, copy  ) NSString *price;
 
 @end

@@ -27,6 +27,8 @@
       forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backBtn];
     
+    [self.view setBackgroundColor:[UIColor blueColor]];
+    
     @weakify(self);
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
@@ -41,4 +43,4 @@
 }
 @end
 
-// 需要完美界面。
+// 界面视觉效果要震撼
