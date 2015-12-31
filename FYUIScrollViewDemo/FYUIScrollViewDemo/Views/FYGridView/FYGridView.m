@@ -44,6 +44,11 @@ UIViewAnimationOptionAllowUserInteraction;
 @property (atomic) NSInteger lastPositionLoaded;
 
 - (void)sortingPanGestureUpdated:(UIPanGestureRecognizer *)panGesture;
+- (void)sortingLongPressGestureUpdated:(UILongPressGestureRecognizer *)longPressGesture;
+- (void)tapGestureUpdated:(UITapGestureRecognizer *)tapGesture;
+- (void)panGestureUpdated:(UIPanGestureRecognizer *)panGesture;
+- (void)pinchGestureUpdated:(UIPinchGestureRecognizer *)pinchGesture;
+- (void)rotationGestureUpdated:(UIRotationGestureRecognizer *)rotationGesture;
 
 @end
 
@@ -58,6 +63,26 @@ UIViewAnimationOptionAllowUserInteraction;
 */
 
 - (void)sortingPanGestureUpdated:(UIPanGestureRecognizer *)panGesture {
+
+}
+
+- (void)sortingLongPressGestureUpdated:(UILongPressGestureRecognizer *)longPressGesture {
+
+}
+
+- (void)tapGestureUpdated:(UITapGestureRecognizer *)tapGesture {
+
+}
+
+- (void)panGestureUpdated:(UIPanGestureRecognizer *)panGesture {
+
+}
+
+- (void)pinchGestureUpdated:(UIPinchGestureRecognizer *)pinchGesture {
+
+}
+
+- (void)rotationGestureUpdated:(UIRotationGestureRecognizer *)rotationGesture {
 
 }
 
