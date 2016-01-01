@@ -50,6 +50,15 @@ UIViewAnimationOptionAllowUserInteraction;
 - (void)pinchGestureUpdated:(UIPinchGestureRecognizer *)pinchGesture;
 - (void)rotationGestureUpdated:(UIRotationGestureRecognizer *)rotationGesture;
 
+- (void)sortingMoveDidStartAtPoint:(CGPoint)point;
+- (void)sortingMoveDidContinueToPoint:(CGPoint)point;
+- (void)sortingMoveDidStopAtPoint:(CGPoint)point;
+- (void)sortingAutoScrollMovementCheck;
+
+- (void)transformingGestureDidBeginWithGesture:(UIGestureRecognizer *)gesture;
+- (void)transformingGestureDidFinish;
+- (BOOL)isInTransformingState;
+
 @end
 
 @implementation FYGridView
@@ -84,6 +93,38 @@ UIViewAnimationOptionAllowUserInteraction;
 
 - (void)rotationGestureUpdated:(UIRotationGestureRecognizer *)rotationGesture {
 
+}
+
+//
+- (void)sortingMoveDidStartAtPoint:(CGPoint)point {
+
+}
+
+- (void)sortingMoveDidContinueToPoint:(CGPoint)point {
+
+}
+
+- (void)sortingMoveDidStopAtPoint:(CGPoint)point {
+
+}
+
+- (void)sortingAutoScrollMovementCheck {
+
+}
+
+//
+
+- (void)transformingGestureDidBeginWithGesture:(UIGestureRecognizer *)gesture {
+
+}
+
+- (void)transformingGestureDidFinish {
+
+}
+
+- (BOOL)isInTransformingState {
+
+    return YES;
 }
 
 - (FYGridViewCell *)dequeueReusableCell {
