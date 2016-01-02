@@ -59,6 +59,22 @@ UIViewAnimationOptionAllowUserInteraction;
 - (void)transformingGestureDidFinish;
 - (BOOL)isInTransformingState;
 
+- (void)recomputeSize;
+- (void)relayoutItemsAnimated:(BOOL)animated;
+- (NSArray *)itemSubviews;
+- (FYGridViewCell *)cellForItemAtIndex:(NSInteger)position;
+- (FYGridViewCell *)newItemSubviewForPosition:(NSInteger)position;
+- (NSInteger)positionForItemSubview:(FYGridViewCell *)view;
+- (void)setSubviewsCacheAsInvalid;
+
+- (void)loadRequiredItems;
+- (void)cleanUpUnseenItems;
+- (void)queueReusableCell:(FYGridViewCell *)cell;
+
+- (void)receivedMemoryWarningNotification:(NSNotification *)notification;
+
+- (void)willRotate:(NSNotification *)notificaiton;
+
 @end
 
 @implementation FYGridView
