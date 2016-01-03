@@ -143,6 +143,19 @@ UIViewAnimationOptionAllowUserInteraction;
     return YES;
 }
 
+- (void)recomputeSize {
+
+}
+
+- (void)relayoutItemsAnimated:(BOOL)animated {
+
+}
+
+- (NSArray *)itemSubviews {
+
+    return nil;
+}
+
 - (FYGridViewCell *)dequeueReusableCell {
 
     return nil;
