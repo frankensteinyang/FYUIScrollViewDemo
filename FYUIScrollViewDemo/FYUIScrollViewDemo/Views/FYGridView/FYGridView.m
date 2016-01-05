@@ -98,6 +98,24 @@ UIViewAnimationOptionAllowUserInteraction;
         
         _scrollView.delegate = self;
         [self addSubview:_scrollView];
+        
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                              action:@selector(tapGestureUpdated:)];
+        _tapGesture.delegate = self;
+        _tapGesture.numberOfTapsRequired = 1;
+        _tapGesture.numberOfTouchesRequired = 1;
+        [_scrollView addGestureRecognizer:_tapGesture];
+        
+        _pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self
+                                                                  action:@selector(pinchGestureUpdated:)];
+        _pinchGesture.delegate = self;
+        [self addGestureRecognizer:_pinchGesture];
+        
+        _rotationGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self
+                                                                        action:@selector(rotationGestureUpdated:)];
+        _rotationGesture.delegate = self;
+        [self addGestureRecognizer:_rotationGesture];
+        
     }
     return self;
 }
