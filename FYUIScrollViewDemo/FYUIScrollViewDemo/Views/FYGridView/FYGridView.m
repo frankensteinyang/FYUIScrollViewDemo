@@ -223,4 +223,38 @@ UIViewAnimationOptionAllowUserInteraction;
 
 }
 
+- (FYGridViewCell *)newItemSubviewForPosition:(NSInteger)position {
+
+    return nil;
+}
+
+- (void)receivedMemoryWarningNotification:(NSNotification *)notification {
+
+}
+
+- (void)cleanUpUnseenItems {
+
+}
+
+- (NSInteger)positionForItemSubview:(FYGridViewCell *)view {
+
+    return 1;
+}
+
+- (void)queueReusableCell:(FYGridViewCell *)cell {
+
+}
+
+- (void)willRotate:(NSNotification *)notificaiton {
+
+}
+
+- (void)setSubviewsCacheAsInvalid {
+
+}
+
+- (void)loadRequiredItems {
+
+}
+
 @end
