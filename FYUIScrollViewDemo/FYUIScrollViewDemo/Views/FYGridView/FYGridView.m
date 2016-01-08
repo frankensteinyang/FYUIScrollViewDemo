@@ -116,6 +116,12 @@ UIViewAnimationOptionAllowUserInteraction;
         _rotationGesture.delegate = self;
         [self addGestureRecognizer:_rotationGesture];
         
+        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureUpdated:)];
+        _panGesture.delegate = self;
+        [_panGesture setMaximumNumberOfTouches:2];
+        [_panGesture setMinimumNumberOfTouches:2];
+        [self addGestureRecognizer:_panGesture];
+        
     }
     return self;
 }
