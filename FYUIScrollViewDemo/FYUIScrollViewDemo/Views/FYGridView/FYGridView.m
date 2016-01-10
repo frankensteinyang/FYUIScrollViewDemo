@@ -159,6 +159,7 @@ UIViewAnimationOptionAllowUserInteraction;
 
 }
 
+//
 - (void)sortingMoveDidStopAtPoint:(CGPoint)point {
 
 }
@@ -173,23 +174,28 @@ UIViewAnimationOptionAllowUserInteraction;
 
 }
 
+//
 - (void)transformingGestureDidFinish {
 
 }
 
+//
 - (BOOL)isInTransformingState {
 
     return YES;
 }
 
+//
 - (void)recomputeSize {
 
 }
 
+//
 - (void)relayoutItemsAnimated:(BOOL)animated {
 
 }
 
+//
 - (NSArray *)itemSubviews {
 
     return nil;
