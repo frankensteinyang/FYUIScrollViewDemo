@@ -43,8 +43,13 @@ UIViewAnimationOptionAllowUserInteraction;
 @property (atomic) NSInteger firstPositionLoaded;
 @property (atomic) NSInteger lastPositionLoaded;
 
+//
 - (void)sortingPanGestureUpdated:(UIPanGestureRecognizer *)panGesture;
+
+//
 - (void)sortingLongPressGestureUpdated:(UILongPressGestureRecognizer *)longPressGesture;
+
+//
 - (void)tapGestureUpdated:(UITapGestureRecognizer *)tapGesture;
 - (void)panGestureUpdated:(UIPanGestureRecognizer *)panGesture;
 - (void)pinchGestureUpdated:(UIPinchGestureRecognizer *)pinchGesture;
