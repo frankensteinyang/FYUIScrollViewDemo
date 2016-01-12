@@ -51,12 +51,23 @@ UIViewAnimationOptionAllowUserInteraction;
 
 //
 - (void)tapGestureUpdated:(UITapGestureRecognizer *)tapGesture;
+
+//
 - (void)panGestureUpdated:(UIPanGestureRecognizer *)panGesture;
+
+//
 - (void)pinchGestureUpdated:(UIPinchGestureRecognizer *)pinchGesture;
+
+//
 - (void)rotationGestureUpdated:(UIRotationGestureRecognizer *)rotationGesture;
 
+//
 - (void)sortingMoveDidStartAtPoint:(CGPoint)point;
+
+//
 - (void)sortingMoveDidContinueToPoint:(CGPoint)point;
+
+//
 - (void)sortingMoveDidStopAtPoint:(CGPoint)point;
 - (void)sortingAutoScrollMovementCheck;
 
