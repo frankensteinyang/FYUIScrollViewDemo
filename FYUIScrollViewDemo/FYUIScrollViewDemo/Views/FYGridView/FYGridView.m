@@ -69,13 +69,22 @@ UIViewAnimationOptionAllowUserInteraction;
 
 //
 - (void)sortingMoveDidStopAtPoint:(CGPoint)point;
+
+//
 - (void)sortingAutoScrollMovementCheck;
 
 - (void)transformingGestureDidBeginWithGesture:(UIGestureRecognizer *)gesture;
+
+//
 - (void)transformingGestureDidFinish;
+
+//
 - (BOOL)isInTransformingState;
 
+//
 - (void)recomputeSize;
+
+//
 - (void)relayoutItemsAnimated:(BOOL)animated;
 - (NSArray *)itemSubviews;
 - (FYGridViewCell *)cellForItemAtIndex:(NSInteger)position;
