@@ -86,9 +86,17 @@ UIViewAnimationOptionAllowUserInteraction;
 
 //
 - (void)relayoutItemsAnimated:(BOOL)animated;
+
+//
 - (NSArray *)itemSubviews;
+
+//
 - (FYGridViewCell *)cellForItemAtIndex:(NSInteger)position;
+
+//
 - (FYGridViewCell *)newItemSubviewForPosition:(NSInteger)position;
+
+//
 - (NSInteger)positionForItemSubview:(FYGridViewCell *)view;
 - (void)setSubviewsCacheAsInvalid;
 
