@@ -98,12 +98,20 @@ UIViewAnimationOptionAllowUserInteraction;
 
 //
 - (NSInteger)positionForItemSubview:(FYGridViewCell *)view;
+
+//
 - (void)setSubviewsCacheAsInvalid;
 
+//
 - (void)loadRequiredItems;
+
+//
 - (void)cleanUpUnseenItems;
+
+//
 - (void)queueReusableCell:(FYGridViewCell *)cell;
 
+//
 - (void)receivedMemoryWarningNotification:(NSNotification *)notification;
 
 - (void)willRotate:(NSNotification *)notificaiton;
