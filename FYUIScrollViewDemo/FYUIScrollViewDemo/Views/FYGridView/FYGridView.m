@@ -73,6 +73,7 @@ UIViewAnimationOptionAllowUserInteraction;
 //
 - (void)sortingAutoScrollMovementCheck;
 
+//
 - (void)transformingGestureDidBeginWithGesture:(UIGestureRecognizer *)gesture;
 
 //
@@ -114,6 +115,7 @@ UIViewAnimationOptionAllowUserInteraction;
 //
 - (void)receivedMemoryWarningNotification:(NSNotification *)notification;
 
+//
 - (void)willRotate:(NSNotification *)notificaiton;
 
 @end
